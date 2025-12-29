@@ -1,8 +1,8 @@
 disabled = false
 languageCode = 'it-IT'
-languageName = 'Italiano'
+languageName = 'Русский'
 title = 'Magnolia'
-copyright = """Designed with [Hugo](https://gohugo.io/) by [Ludovico Caluori](https://github.com/ololiuhqui) 🎨 \n
+copyright = """Designed with [Hugo](https://gohugo.io/) by [Pomware Innovative Solutions LTD](https://github.com/ololiuhqui)\n
  Licensed under [MIT license](https://github.com/ololiuhqui/magnolia-free-hugo-theme/blob/main/LICENSE.md) 📄"""
 contentDir="content/it"
 
@@ -115,10 +115,10 @@ Guardate cosa è in grado di fare questo tema nella pagina delle caratteristiche
   [params.footer.contacts]
   enabled = true
   heading = "Contatti"
-  address = "Scranton 2865 Pouros Corners 55441-0788"
-  mail = "dundermifflin@fakemail.com"
+  address = "Nicosia, Cyprus"
+  mail = "pomwareltd@gmail.com"
   mail2 = "dundermifflinorders@fakemail.com"
-  phone = "+00 0000000"
+  phone = "+30 6942612515"
 
 [params.notfound]
   title = "404, page not found"

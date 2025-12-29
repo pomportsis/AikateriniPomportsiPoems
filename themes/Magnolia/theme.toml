@@ -20,7 +20,7 @@ features = ["Responsive", "Modular", "Customizable", "SEO ready", "Google Analyt
 
 # If the theme has a single author
 [author]
-    name = "Ludovico Caluori"
+    name = "Pomware Innovative Solutions LTD"
     homepage = "https://github.com/ololiuhqui"
 
 # If porting an existing theme

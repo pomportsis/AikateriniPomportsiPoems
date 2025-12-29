@@ -1,7 +1,7 @@
-baseURL = 'https://example.com'
+baseURL = "https://pomportsis.github.io/AikateriniPomportsiPoems/"
 languageCode = ''
 title = 'Magnolia Default' # This can get overwritten by the single language files
-defaultContentLanguage = 'en'
+defaultContentLanguage = 'el'
 # defaultContentLanguageInSubDir = true
 enableRobotsTXT = true
 theme = "Magnolia"
