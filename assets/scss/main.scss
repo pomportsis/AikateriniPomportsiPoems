@@ -1,11 +1,15 @@
 /* CUSTOM FONTS */
 @font-face {
-  font-family: 'JosefinSans';
-  src: url(../fonts/JosefinSans-VariableFont_wght.ttf) format('truetype');
+  font-family: 'OpenSansLocal';
+  src: url('/fonts/OpenSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
 @font-face {
-  font-family: 'YesevaOne';
-  src: url(../fonts/YesevaOne-Regular.ttf) format('truetype');
+  font-family: 'OpenSansLocal';
+  src: url('/fonts/OpenSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
 }
 
 /* ICONS */
@@ -268,3 +272,559 @@ footer {
 
 /* IMPORTING CUSTOM CSS */
 @import 'custom.scss';
+
+
+
+/* ===== POEMS: old notebook page look ===== */
+
+.poem-shell {
+  max-width: 900px;
+}
+
+/* the “paper page” */
+.poem-page {
+  position: relative;
+  max-width: 760px;
+  margin: 2rem auto;
+  padding: 4rem 4rem 3.5rem;
+  border-radius: 18px;
+
+  /* paper tone */
+  background: #f6efe3;
+
+  /* gentle depth */
+  box-shadow:
+    0 22px 55px rgba(0,0,0,0.18),
+    0 2px 0 rgba(255,255,255,0.55) inset;
+
+  /* subtle border */
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* subtle “paper texture” using layered gradients (no image needed) */
+.poem-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  pointer-events: none;
+
+  background:
+    radial-gradient(1200px 600px at 15% 20%, rgba(0,0,0,0.06), transparent 55%),
+    radial-gradient(900px 500px at 85% 80%, rgba(0,0,0,0.05), transparent 60%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.04),
+      rgba(0,0,0,0.04) 2px,
+      transparent 1px,
+      transparent 18px
+    );
+
+  mix-blend-mode: multiply;
+  opacity: 0.55;
+}
+
+/* optional: a faint left margin like notebook binding */
+.poem-page::after {
+  content: "";
+  position: absolute;
+  top: 1.5rem;
+  bottom: 1.5rem;
+  left: 3rem;
+  width: 2px;
+  border-radius: 2px;
+  background: rgba(140, 60, 60, 0.18);
+  pointer-events: none;
+}
+
+/* center the title */
+.poem-page h1 {
+  text-align: center;
+  margin-bottom: 1.8rem;
+  letter-spacing: 0.5px;
+}
+
+/* put meta (book name, badges) centered too */
+.poem-page .text-muted,
+.poem-page .badge,
+.poem-page .lead {
+  text-align: center;
+}
+
+/* the poem text: centered block, elegant spacing */
+.poem-page .poem {
+  margin-top: 1.5rem;
+  white-space: pre-wrap;
+  line-height: 2.05;
+  font-size: 1.1rem;
+
+  /* “book page” feel */
+  max-width: 38em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* stanza spacing if you separate stanzas with blank lines */
+.poem-page .poem p {
+  margin: 0;
+}
+
+.poem-page .poem br + br {
+  content: "";
+  display: block;
+  margin-top: 1.2rem;
+}
+
+.poem-page {
+  font-family: "Cormorant Garamond", serif;
+}
+
+.poem-page h1 {
+  font-family: "Marck Script", cursive;
+  font-weight: 400;
+  font-size: clamp(2.6rem, 4vw, 4rem);
+}
+
+.poem-shell .btn-outline-secondary{
+  background: rgba(255,255,255,0.90) !important;
+  border: 2px solid rgba(0,0,0,0.22) !important;
+  color: rgba(0,0,0,0.85) !important;
+
+  font-weight: 700;
+  padding: 10px 14px;
+  border-radius: 12px;
+
+  box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+}
+
+.poem-shell .btn-outline-secondary:hover {
+  background: rgba(255, 255, 255, 1) !important;
+  border-color: rgba(0, 0, 0, 0.40) !important;
+  color: rgba(0, 0, 0, 0.95) !important;
+
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16);
+}
+
+.poem-shell .btn-outline-secondary:focus {
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.16),
+    0 0 0 0.25rem rgba(115, 0, 60, 0.22) !important;
+}
+
+/* If Bootstrap marks it as :disabled or .disabled, force normal look */
+.poem-shell .btn-outline-secondary:disabled,
+.poem-shell .btn-outline-secondary.disabled {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+
+/* stronger notebook vibe */
+.poem-page {
+  background: #f4eadb; /* slightly warmer */
+}
+
+.poem-page::before {
+  opacity: 0.65; /* a bit more texture */
+}
+
+/* ink + better readability */
+.poem-page,
+.poem-page .poem {
+  color: #1a1a14;
+}
+
+/* title centered + elegant */
+.poem-page h1 {
+  text-transform: none;
+}
+
+/* ===== Back button: always visible ===== */
+.poem-shell .btn-outline-secondary {
+  opacity: 1 !important;
+  filter: none !important;
+
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 2px solid rgba(0, 0, 0, 0.28) !important;
+  color: rgba(0, 0, 0, 0.88) !important;
+
+  font-weight: 800;
+  padding: 10px 14px;
+  border-radius: 12px;
+
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+  position: relative;   /* ensure it sits above paper */
+  z-index: 5;
+}
+
+/* optional: subtle “handwritten” feel for poem body */
+.poem-page .poem {
+  letter-spacing: 0.2px;
+}
+
+
+
+/* Center poem text */
+.poem-page .poem {
+  text-align: center;
+}
+
+/* If the poem is wrapped in <p> by Markdown, center those too */
+.poem-page .poem p {
+  text-align: center;
+}
+
+/* If you ever use <pre> for poems */
+.poem-page pre,
+.poem-page pre code {
+  text-align: center;
+}
+
+/* ===== BOOKS (2025 marketing list) ===== */
+
+.books-list{
+  max-width: 980px;
+}
+
+/* each book as a premium “product row” */
+.book-item{
+  display: flex;
+  align-items: stretch;
+  gap: 22px;
+
+  padding: 22px;
+  margin: 18px 0;
+
+  border-radius: 18px;
+  background: rgba(255,255,255,0.34);
+  border: 1px solid rgba(0,0,0,0.07);
+
+  box-shadow:
+    0 22px 60px rgba(0,0,0,0.10),
+    0 2px 0 rgba(255,255,255,0.50) inset;
+
+  backdrop-filter: blur(8px);
+}
+
+.book-cover{
+  flex: 0 0 160px; /* fixed cover width */
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.book-cover img,
+.book-cover-placeholder{
+  width: 160px;
+  height: 220px;              /* consistent “book” ratio */
+  border-radius: 14px;
+  object-fit: cover;
+  display: block;
+
+  box-shadow:
+    0 18px 35px rgba(0,0,0,0.18),
+    0 2px 0 rgba(255,255,255,0.35) inset;
+
+  border: 1px solid rgba(0,0,0,0.12);
+  background: rgba(0,0,0,0.05);
+}
+
+.book-info{
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.book-title-row{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.book-title{
+  font-family: YesevaOne;
+  font-size: 1.65rem;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.book-year{
+  color: rgba(0,0,0,0.55);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.book-note{
+  color: rgba(0,0,0,0.70);
+  max-width: 70ch;
+  margin: 0 0 14px 0;
+}
+
+.book-meta{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  color: rgba(0,0,0,0.60);
+  font-family: JosefinSans;
+  margin-bottom: 12px;
+}
+
+.book-meta .dot{ display: none; } /* we use gap instead */
+
+.book-price{
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 14px;
+  letter-spacing: 0.2px;
+}
+
+/* CTA looks more “product page” */
+.book-info .btn{
+  align-self: flex-start;
+  padding: 10px 14px;
+  border-width: 2px;
+  font-weight: 700;
+}
+
+/* Responsive: keep left/right until tablet; stack only on small phones */
+@media (max-width: 768px){
+  .book-item{
+    gap: 16px;
+    padding: 18px;
+  }
+  .book-cover{ flex-basis: 130px; }
+  .book-cover img,
+  .book-cover-placeholder{
+    width: 130px;
+    height: 180px;
+  }
+  .book-title{ font-size: 1.45rem; }
+}
+
+@media (max-width: 520px){
+  .book-item{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .book-title-row{
+    justify-content: center;
+  }
+  .book-info .btn{
+    align-self: center;
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* ===== Back button: force visible (black text + border) ===== */
+.poem-shell a.btn.btn-outline-secondary {
+  /* Bootstrap 5 button variables */
+  --bs-btn-color: #000 !important;
+  --bs-btn-border-color: #000 !important;
+  --bs-btn-bg: rgba(255, 255, 255, 0.98) !important;
+
+  --bs-btn-hover-color: #000 !important;
+  --bs-btn-hover-bg: #fff !important;
+  --bs-btn-hover-border-color: #000 !important;
+
+  --bs-btn-active-color: #000 !important;
+  --bs-btn-active-bg: #fff !important;
+  --bs-btn-active-border-color: #000 !important;
+
+  /* hard-force as fallback */
+  color: #000 !important;
+  border-color: #000 !important;
+  opacity: 1 !important;
+
+  /* make it pop */
+  border-width: 3px !important;
+  font-weight: 900;
+  background-clip: padding-box;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.65);
+
+  box-shadow:
+    0 14px 30px rgba(0,0,0,0.20),
+    0 0 0 3px rgba(0,0,0,0.10);
+}
+
+/* optional: even more visibility when focused via keyboard */
+.poem-shell a.btn.btn-outline-secondary:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 3px;
+}
+.poem-shell a.btn.btn-outline-secondary { filter: none !important; }
+
+
+/* Back button — softer, paper-like */
+a.btn.btn-outline-secondary.mb-4,
+a.btn.btn-outline-secondary.mb-4:link,
+a.btn.btn-outline-secondary.mb-4:visited {
+  opacity: 1 !important;
+  filter: none !important;
+
+  color: rgba(0,0,0,0.78) !important;
+  background: rgba(255,255,255,0.55) !important;
+
+  border: 2px solid rgba(0,0,0,0.28) !important;
+  border-radius: 12px !important;
+
+  font-weight: 700 !important;
+  padding: 10px 14px !important;
+
+  box-shadow: 0 8px 18px rgba(0,0,0,0.10) !important;
+}
+
+a.btn.btn-outline-secondary.mb-4:hover {
+  color: rgba(0,0,0,0.90) !important;
+  background: rgba(255,255,255,0.75) !important;
+  border-color: rgba(0,0,0,0.38) !important;
+
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.14) !important;
+}
+
+
+/* ============ HOME (safe CSS, no calc, no unit-mixing) ============ */
+
+.home-hero {
+  /* optional: adds a bit of separation from background image */
+}
+
+.home-pill{
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.15);
+  background: rgba(255,255,255,.25);
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+
+/* Title + tagline (editorial) */
+.home-title{
+  font-size: 56px;
+  line-height: 1.05;
+  font-weight: 800;
+  margin: 0 0 12px 0;
+}
+
+.home-tagline{
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(0,0,0,.62);
+  margin: 0 0 22px 0;
+  max-width: 640px;
+}
+
+/* Oval portrait */
+.home-portrait-wrap{
+  width: 420px;
+  height: 420px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.12);
+  background: rgba(255,255,255,.20);
+  box-shadow: 0 18px 50px rgba(0,0,0,.18);
+}
+
+.home-portrait-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Bio card: soft + clean */
+.home-bio{
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 18px;
+  padding: 18px 20px;
+  background: rgba(255,255,255,.25);
+}
+
+.home-bio-title{
+  font-weight: 800;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.home-bio-text{
+  color: rgba(0,0,0,.65);
+  line-height: 1.65;
+}
+
+/* Facts: light cards, not heavy boxes */
+.home-facts{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.home-fact{
+  padding: 14px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,.10);
+  background: rgba(255,255,255,.18);
+}
+
+.home-fact-label{
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  color: rgba(0,0,0,.55);
+  margin-bottom: 4px;
+}
+
+.home-fact-value{
+  font-size: 15px;
+  font-weight: 700;
+  color: rgba(0,0,0,.82);
+  line-height: 1.4;
+}
+
+/* Quote: minimal elegant */
+.home-quote{
+  margin-top: 18px;
+  padding-left: 2px;
+  color: rgba(0,0,0,.70);
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 680px;
+}
+
+.home-quote-mark{
+  font-style: normal;
+  font-weight: 900;
+  opacity: .5;
+}
+
+/* Optional content block */
+.home-content{
+  border: 1px solid rgba(0,0,0,.10);
+  border-radius: 18px;
+  padding: 20px;
+  background: rgba(255,255,255,.18);
+}
+
+/* -------- Responsive tweaks -------- */
+@media (max-width: 992px){
+  .home-title{ font-size: 42px; }
+  .home-portrait-wrap{ width: 320px; height: 320px; }
+  .home-facts{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 420px){
+  .home-title{ font-size: 36px; }
+  .home-portrait-wrap{ width: 280px; height: 280px; }
+}

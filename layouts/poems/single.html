@@ -1,0 +1,37 @@
+{{ define "main" }}
+<main class="container my-5">
+
+  <div class="poem-shell mx-auto">
+
+    <div class="poem-nav">
+      <a class="btn btn-outline-secondary mb-4" href="{{ .CurrentSection.RelPermalink }}">
+        ← {{ i18n "back_to_poems" | default "Back to poems" }}
+      </a>
+    </div>
+
+    <article class="poem-page">
+      {{ with .Params.bookName }}
+        <div class="text-muted text-uppercase small mb-2">{{ . }}</div>
+      {{ end }}
+
+      <h1 class="mb-3">{{ .Title }}</h1>
+
+      {{ with .Params.book }}
+        <div class="mb-3">
+          <span class="badge text-bg-light border">{{ . }}</span>
+        </div>
+      {{ end }}
+
+      {{ with .Params.description }}
+        <p class="lead mb-4">{{ . }}</p>
+      {{ end }}
+
+      <div class="poem">
+        {{ .Content }}
+      </div>
+    </article>
+
+  </div>
+
+</main>
+{{ end }}

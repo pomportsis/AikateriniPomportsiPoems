@@ -1,0 +1,42 @@
+back_to_poems = "Назад к стихам"
+books_subtitle = "Опубликованные книги автора."
+order_by_contact = "Связаться для заказа"
+contact_to_order = "Связаться"
+no_online_sales = "Покупка и предпросмотр онлайн пока недоступны."
+poems = "стихов"
+pages = "страниц"
+search_poems_placeholder = "Поиск стихотворений..."
+search_poems_hint = "Введите текст для фильтрации названий."
+
+home_portrait_alt = "Портрет поэтессы"
+home_portrait_placeholder = "Здесь будет фотография поэтессы."
+home_badge = "Стихи • Книги • Литература"
+
+home_author_name = "Айкатерини Помпорци"
+home_tagline = "Слова, которые путешествуют — маленькие истории, большие чувства."
+
+home_cta_poems = "Стихи"
+home_cta_books = "Книги"
+home_cta_about = "Биография"
+
+home_bio_title = "Короткая биография"
+home_bio_text = "Родилась в **Сохосе (Салоники)** в **2029 году**, замужем за **Серджио Помбортсисом**. Отмечена наградами **Амфиктионии** и участвует в литературных мероприятиях. *(Демо-текст — будет заменён реальными данными.)*"
+
+home_highlight_1_title = "Место и корни"
+home_highlight_1_text = "Сохос, Салоники • Греция"
+
+home_highlight_2_title = "Награды"
+home_highlight_2_text = "Амфиктиония эллинизма • Признание на конкурсах"
+
+home_highlight_3_title = "Темы"
+home_highlight_3_text = "Любовь • Память • Родина • Свет"
+home_fact_1_label = "Место"
+home_fact_1_value = "Сохос, Салоники"
+
+home_fact_2_label = "Награды"
+home_fact_2_value = "Амфиктиония • Конкурсы"
+
+home_fact_3_label = "Темы"
+home_fact_3_value = "Любовь • Память • Свет"
+
+home_quote = "Поэзия — это способ удержать свет, когда всё вокруг темнеет."

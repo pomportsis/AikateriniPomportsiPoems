@@ -1,89 +1,91 @@
 disabled = false
-languageCode = 'it-IT'
-languageName = 'Ελληνικά'
+languageCode = 'el-EL'
+languageName = 'Ελληνικα'
 title = 'Αικατερίνη Πομπόρτση'
-copyright = """Designed with [Hugo](https://gohugo.io/) by [Pomware Innovative Solutions LTD](https://github.com/ololiuhqui)\n
- Licensed under [MIT license](https://github.com/ololiuhqui/magnolia-free-hugo-theme/blob/main/LICENSE.md) 📄"""
-contentDir="content/it"
+copyright = """Σχεδιασμένο με [Hugo](https://gohugo.io/) από την [Pomware Innovative Solutions LTD](https://github.com/ololiuhqui)\n
+Με άδεια χρήσης [MIT](https://github.com/ololiuhqui/magnolia-free-hugo-theme/blob/main/LICENSE.md)\n
+© Όλα τα δικαιώματα διατηρούνται από την POMWARE INNOVATIVE SOLUTIONS LTD"""
+contentDir = "content/el"
 
 [params]
-  subtitle = "Free Hugo theme"
+  subtitle = "Σύγχρονη ελληνική ποίηση"
 
 # PAGES
 
   [params.homepage]
-    preTitle = 'Free Hugo theme'
+    preTitle = "Δωρεάν θέμα Hugo"
     title = "Magnolia"
-    intro= """
-### "La libertà ci rende esseri umani migliori e ci fa migliorare più velocemente il nostro status di razza collettiva ".
+    intro = """
+### «Η ελευθερία μας κάνει καλύτερους ανθρώπους και μας βοηθά να βελτιωνόμαστε πιο γρήγορα ως συλλογική ανθρωπότητα».
 ___
 
-**Un tema Hugo semplice, completamente personalizzabile e multilingue pensato per i professionisti e le piccole imprese**.
+**Ένα απλό, πλήρως παραμετροποιήσιμο και πολυγλωσσικό θέμα Hugo, σχεδιασμένο για επαγγελματίες και μικρές επιχειρήσεις**.
 
-Ho costruito questo tema pensando alla semplicità, è piccolo e facilmente **personalizzabile, reattivo, modulare e multilingua**. Ma lascia anche spazio a una personalizzazione più approfondita, poiché utilizza **Bootstrap** e **SCSS**.
+Έφτιαξα αυτό το θέμα με γνώμονα την απλότητα: είναι μικρό και εύκολα **παραμετροποιήσιμο, responsive, modular και πολυγλωσσικό**. Παράλληλα αφήνει χώρο για πιο βαθιά παραμετροποίηση, καθώς χρησιμοποιεί **Bootstrap** και **SCSS**.
 
-Qui c'è la [pagina github del tema](https://github.com/ololiuhqui/magnolia-free-hugo-theme), a cui si dovrebbe fare riferimento se si cercano ulteriori dettagli, ricordati di lasciare una stellina al repo!
+Εδώ είναι η [σελίδα GitHub του θέματος](https://github.com/ololiuhqui/magnolia-free-hugo-theme). Αν ψάχνεις περισσότερες λεπτομέρειες, ανατρέξε εκεί — και μην ξεχάσεις να αφήσεις ένα ⭐ στο repo!
 
-Guardate cosa è in grado di fare questo tema nella pagina delle caratteristiche e vedete un bellissimo esempio di pagina dei contatti qui sotto.
+Δες τι μπορεί να κάνει αυτό το θέμα στη σελίδα χαρακτηριστικών και ένα όμορφο παράδειγμα σελίδας επικοινωνίας παρακάτω.
         """
-    mainButton = "Caratteristiche"
+    mainButton = "Χαρακτηριστικά"
     mainButtonRef = "/caratteristiche"
-    secondButton = "Contatti"
+    secondButton = "Επικοινωνία"
     secondButtonRef = "/contatti"
 
-    blogTitle = "Storie interessanti"
-    blogButton= "More Stories"
+    blogTitle = "Ενδιαφέρουσες ιστορίες"
+    blogButton = "Περισσότερες ιστορίες"
 
 [params.office]
-  title = "Uffici"
- description = "Questa pagina può essere facilmente personalizzata con l'aggiunta di un link a Google Maps per ottenere indicazioni stradali verso il luogo dell'attività."
- buttonText = "Indicazioni"
- buttonLink = "https://maps.app.goo.gl/LzsPzRkTYSZ8SF3y8"
- mapLink = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d382266.44569392945!2d-76.55832397784323!3d41.53770983690751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c4d93a77484bbb%3A0xfff27920ab9bfae8!2sScranton%2C%20Pennsylvania%2C%20Stati%20Uniti!5e0!3m2!1sit!2sit!4v1716459350324!5m2!1sit!2sit" # google maps "embed" link here
+  title = "Γραφεία"
+  description = "Αυτή η σελίδα μπορεί να παραμετροποιηθεί εύκολα προσθέτοντας έναν σύνδεσμο Google Maps για οδηγίες προς την τοποθεσία της επιχείρησης."
+  buttonText = "Οδηγίες"
+  buttonLink = "https://maps.app.goo.gl/LzsPzRkTYSZ8SF3y8"
+  mapLink = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d382266.44569392945!2d-76.55832397784323!3d41.53770983690751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c4d93a77484bbb%3A0xfff27920ab9bfae8!2sScranton%2C%20Pennsylvania%2C%20United%20States!5e0!3m2!1sel!2sel!4v1716459350324!5m2!1sel!2sel" # Google Maps embed link
 
 [params.contacts]
-  title = "Contattaci!"
-  formCallToAction = "Questa è una pagina di esempio \"contattaci\"; è possibile ricevere le risposte dei moduli su FormSpree (gratis)."
-  socialCallToAction = "Puoi aggiungere i tuoi link ai social media qui sotto!"
+  title = "Επικοινωνήστε μαζί μας!"
+  formCallToAction = "Αυτή είναι μια ενδεικτική σελίδα επικοινωνίας· μπορείτε να λαμβάνετε απαντήσεις από φόρμες μέσω Formspree (δωρεάν)."
+  socialCallToAction = "Μπορείτε να μας ακολουθήσετε στα παρακάτω social media!"
   [params.contacts.form]
     formspreeLink = "https://yourformspreelink.com"
-    firstname = "Nome*"
-    lastname = "Cognome*"
+    firstname = "Όνομα*"
+    lastname = "Επώνυμο*"
     email = "E-mail*"
-    phone = "Numero di telefono*"
-    Inquiry = "Richiesta*"
-    checkbox = " accetto che i miei dati siano trattati in conformità alla legge*"
-    submitBtn = "Invia"
+    phone = "Τηλέφωνο*"
+    Inquiry = "Μήνυμα*"
+    checkbox = " αποδέχομαι την επεξεργασία των δεδομένων μου σύμφωνα με τον νόμο*"
+    submitBtn = "Αποστολή"
+
 [params.services]
-  title = "Caratteristiche"
-  description = """ Ho costruito questo tema pensando alla semplicità: è piccolo e facilmente personalizzabile, reattivo, modulare e multilingue. Ma lascia anche spazio ad ulteriori personalizzazioni approfondite, poiché utilizza Bootstrap e SCSS.
-  Questa pagina mostra anche un esempio di come si possono cambiare i nomi delle pagine del sito: Il sito utilizzerà il layout `services.html`, ma la pagina si chiamerà "Caratteristiche" e il link userà il relative permalink `/caratteristiche`."""
+  title = "Χαρακτηριστικά"
+  description = """Έφτιαξα αυτό το θέμα με γνώμονα την απλότητα: είναι μικρό και εύκολα παραμετροποιήσιμο, responsive, modular και πολυγλωσσικό. Παράλληλα αφήνει χώρο για πιο βαθιά παραμετροποίηση, καθώς χρησιμοποιεί Bootstrap και SCSS.
+  Αυτή η σελίδα δείχνει επίσης ένα παράδειγμα του πώς μπορούν να αλλάξουν τα ονόματα των σελίδων του site: το site θα χρησιμοποιήσει το layout `services.html`, αλλά η σελίδα θα ονομάζεται "Χαρακτηριστικά" και ο σύνδεσμος θα χρησιμοποιεί το σχετικό permalink `/caratteristiche`."""
   [params.services.list]
     [params.services.list.0]
-      title= "Responsività"
-      description= "Il tema è completamente reattivo e si visualizza perfettamente su ogni dimensione dello schermo."
+      title = "Προσαρμογή σε όλες τις συσκευές"
+      description = "Το θέμα είναι πλήρως responsive και προβάλλεται άψογα σε κάθε μέγεθος οθόνης."
     [params.services.list.01]
-      title = "Modularità"
-      description= "Nascondi e mostra alcuni elementi facilmente dal file di configurazione"
+      title = "Αρθρωτή δομή"
+      description = "Κρύψτε ή εμφανίστε εύκολα ορισμένα στοιχεία μέσα από το αρχείο ρυθμίσεων."
     [params.services.list.02]
-      title = "Multilingual"
-      description= "a lingua predefinita dei contenuti è l'inglese (può essere cambiata), ma è possibile aggiungere tutte le lingue che si desidera in modo molto semplice; il tema include un esempio di lingua italiana e un menu a tendina per passare facilmente da una lingua all'altra. I permalink possono essere localizzati in ogni lingua (ad esempio, si può avere `/contatti` per l'inglese e `/contatti` per l'italiano)."
+      title = "Πολυγλωσσικό"
+      description = "Η προεπιλεγμένη γλώσσα περιεχομένου είναι τα Αγγλικά (μπορεί να αλλάξει), αλλά μπορείτε να προσθέσετε όσες γλώσσες θέλετε πολύ εύκολα· το θέμα περιλαμβάνει παράδειγμα και dropdown μενού για εύκολη εναλλαγή γλώσσας. Τα permalinks μπορούν να προσαρμοστούν ανά γλώσσα."
     [params.services.list.03]
-      title = "Personalizzabile"
-      description= "Il contenuto della pagina può essere personalizzato all'interno dei file di configurazione. Alcune variabili possono essere cambiate dai file SCSS."
+      title = "Παραμετροποιήσιμο"
+      description = "Το περιεχόμενο της σελίδας μπορεί να παραμετροποιηθεί μέσα από τα αρχεία ρυθμίσεων. Ορισμένες μεταβλητές μπορούν να αλλάξουν από τα αρχεία SCSS."
     [params.services.list.04]
-      title = "SEO ready"
-      description= "Ogni pagina in /content ha una *meta descrizione* facilmente personalizzabile e un *meta titolo* unico per una migliore e più facile indicizzazione. Il tema userà l'immagine `static/img/meta-image` come meta-immagine per Google, Meta e X."
+      title = "Έτοιμο για SEO"
+      description = "Κάθε σελίδα στο /content έχει *meta description* και μοναδικό *meta title* για καλύτερη και πιο εύκολη ευρετηρίαση. Το θέμα χρησιμοποιεί την εικόνα `static/img/meta-image` ως meta-image για Google, Meta και X."
     [params.services.list.05]
-      title = "Google Analytics integrato"
-      description= "Inserite il vostro tag Google Analytics nel file `config.toml` e sarete pronti a monitorare facilmente le prestazioni del vostro sito."
+      title = "Ενσωματωμένο Google Analytics"
+      description = "Βάλτε το Google Analytics tag σας στο αρχείο `config.toml` και θα είστε έτοιμοι να παρακολουθείτε εύκολα την απόδοση του site σας."
     [params.services.list.06]
-      title = "Google Maps Incluso"
-      description= "La pagina dei contatti può essere facilmente personalizzata con l'aggiunta di un link a Google Maps per ottenere indicazioni stradali verso la sede dell'attività."
+      title = "Ενσωματωμένο Google Maps"
+      description = "Η σελίδα επικοινωνίας μπορεί να παραμετροποιηθεί εύκολα με την προσθήκη ενός Google Maps link για οδηγίες προς την τοποθεσία της επιχείρησης."
 
 [params.socials]
   enabled = true
-  callToAction= "Connettiti con noi sui social media >"
+  callToAction = "Συνδεθείτε μαζί μας στα social media >"
       [[params.socials.link]]
         name = "github"
         link = "https://github.com/ololiuhqui/magnolia-free-hugo-theme"
@@ -97,50 +99,50 @@ Guardate cosa è in grado di fare questo tema nella pagina delle caratteristiche
 [params.schedules]
   enabledFooter = false
   enabledContacts = true
-  title = "Office hours"
+  title = "Ώρες λειτουργίας"
   [params.schedules.days]
-    day1 = "Lunedì: 9:00 – 19:00"
-    day2 = "Martedì: 9:00 – 19:00"
-    day3 = "Mercoledì: 9:00 – 19:00"
-    day4 = "Giovedì: 9:00 – 19:00"
-    day5 = "Venerdì: 9:00 – 19:00"
+    day1 = "Δευτέρα: 9:00 – 19:00"
+    day2 = "Τρίτη: 9:00 – 19:00"
+    day3 = "Τετάρτη: 9:00 – 19:00"
+    day4 = "Πέμπτη: 9:00 – 19:00"
+    day5 = "Παρασκευή: 9:00 – 19:00"
     day6 = ""
     day7 = ""
 
 [params.footer]
-  extraDescription1 = "Straight outta Scranton city"
-  extraDescription2 = "VAT No. 0000000000"
+  extraDescription1 = "Κατευθείαν από την πόλη του Scranton"
+  extraDescription2 = "ΑΦΜ: 0000000000"
   [params.footer.navigate]
-  heading = "Naviga"
+    heading = "Πλοηγηση"
   [params.footer.contacts]
-  enabled = true
-  heading = "Contatti"
-  address = "Nicosia, Cyprus"
-  mail = "pomwareltd@gmail.com"
-  mail2 = "dundermifflinorders@fakemail.com"
-  phone = "+30 6942612515"
+    enabled = true
+    heading = "Επικοινωνια με POMWARE"
+    address = "Λευκωσία Κύπρος & Θεσσαλονίκη Ελλάδα"
+    mail = "pomwareltd@gmail.com"
+    mail2 = "dundermifflinorders@fakemail.com"
+    phone = "+30 6942612515"
 
 [params.notfound]
-  title = "404, page not found"
+  title = "404, η σελίδα δεν βρέθηκε"
 
-[params.single] # for posts pages (visible only if posts are rendered)
-  similarContent= "Contenuti Simili"
-  toc= "Indice"
+[params.single] # για σελίδες άρθρων (ορατό μόνο αν εμφανίζονται posts)
+  similarContent = "Παρόμοιο περιεχόμενο"
+  toc = "Περιεχόμενα"
 
 [menus]
   [[menus.main]]
-  name = "Home"
-  pageRef = "/"
-  weight = 1
+    name = "Ποιηματα"
+    pageRef = "poems"
+    weight = 2
   [[menus.main]]
-  name = "caratteristiche"
-  pageRef = "pages/services"
-  weight = 2
+    name = "Βιβλια"
+    pageRef = "books"
+    weight = 3
   [[menus.main]]
-  name = "Uffici"
-  pageRef = "pages/office"
-  weight = 3
+    name = "Η Ιστορια μου"
+    pageRef = "pages/services"
+    weight = 4
   [[menus.main]]
-  name = "Contatti"
-  pageRef = "pages/contacts"
-  weight = 4
+    name = "Επικοινωνια"
+    pageRef = "pages/contacts"
+    weight = 5

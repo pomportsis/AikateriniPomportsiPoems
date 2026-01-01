@@ -1,13 +1,14 @@
 disabled = false
-languageCode = 'it-IT'
+languageCode = 'ru-RU'
 languageName = 'Русский'
-title = 'Magnolia'
-copyright = """Designed with [Hugo](https://gohugo.io/) by [Pomware Innovative Solutions LTD](https://github.com/ololiuhqui)\n
- Licensed under [MIT license](https://github.com/ololiuhqui/magnolia-free-hugo-theme/blob/main/LICENSE.md) 📄"""
-contentDir="content/it"
+title = 'Катерина Поборци'
+copyright = """Создано с использованием [Hugo](https://gohugo.io/) компанией [Pomware Innovative Solutions LTD](https://github.com/ololiuhqui)\n
+Лицензия [MIT](https://github.com/ololiuhqui/magnolia-free-hugo-theme/blob/main/LICENSE.md)\n
+© Все права защищены компанией POMWARE INNOVATIVE SOLUTIONS LTD"""
+contentDir="content/ru"
 
 [params]
-  subtitle = "Free Hugo theme"
+  subtitle = "Современная греческая поэзия"
 
 # PAGES
 
@@ -83,7 +84,7 @@ Guardate cosa è in grado di fare questo tema nella pagina delle caratteristiche
 
 [params.socials]
   enabled = true
-  callToAction= "Connettiti con noi sui social media >"
+  callToAction = "Мы в социальных сетях >"
       [[params.socials.link]]
         name = "github"
         link = "https://github.com/ololiuhqui/magnolia-free-hugo-theme"
@@ -111,11 +112,11 @@ Guardate cosa è in grado di fare questo tema nella pagina delle caratteristiche
   extraDescription1 = "Straight outta Scranton city"
   extraDescription2 = "VAT No. 0000000000"
   [params.footer.navigate]
-  heading = "Naviga"
+  heading = "Навигация"
   [params.footer.contacts]
   enabled = true
-  heading = "Contatti"
-  address = "Nicosia, Cyprus"
+  heading = "Связь с POMWARE"
+  address = "Никосия Кипр и Салоники Греция"
   mail = "pomwareltd@gmail.com"
   mail2 = "dundermifflinorders@fakemail.com"
   phone = "+30 6942612515"
@@ -129,18 +130,19 @@ Guardate cosa è in grado di fare questo tema nella pagina delle caratteristiche
 
 [menus]
   [[menus.main]]
-  name = "Home"
-  pageRef = "/"
-  weight = 1
+    name = "Стихи"
+    pageRef = "poems"
+    weight = 2
   [[menus.main]]
-  name = "caratteristiche"
-  pageRef = "pages/services"
-  weight = 2
+    name = "Книги"
+    pageRef = "books"
+    weight = 3
   [[menus.main]]
-  name = "Uffici"
-  pageRef = "pages/office"
-  weight = 3
+    name = "Моя история"
+    pageRef = "pages/services"
+    weight = 4
   [[menus.main]]
-  name = "Contatti"
-  pageRef = "pages/contacts"
-  weight = 4
+    name = "Контакты"
+    pageRef = "pages/contacts"
+    weight = 5
+

@@ -1,15 +1,16 @@
 disabled = false
 languageCode = 'en-US'
 languageName = 'English'
-title = 'Magnolia' # This will go in the Header as well
+title = 'Aikaterini Pomportsi' # This will go in the Header as well
 copyright = """Designed with [Hugo](https://gohugo.io/) by [Pomware Innovative Solutions LTD](https://github.com/ololiuhqui)\n
- Licensed under [MIT license](https://github.com/ololiuhqui/magnolia-free-hugo-theme/blob/main/LICENSE.md) 📄""" # Please leave this here to give me and the tools i used some credit for the work, or BuyMeACoffee and change or remove the copyrightlink below :)
+ Licensed under [MIT license](https://github.com/ololiuhqui/magnolia-free-hugo-theme/blob/main/LICENSE.md) \n 
+ © All rights reserved by POMWARE INNOVATIVE SOLUTIONS LTD""" 
 contentDir = "content/en"
 
 
 # Change single params to "false" to remove from rendering
 [params]
-  subtitle = "Free Hugo theme" # This goes in the header and in the site title
+  subtitle = "Contemporary Greek Poetry" 
   # PAGES
   [params.homepage]
     # Notice that SEO meta tags (what appears in google search results) can be set
@@ -123,7 +124,7 @@ Look at what this theme is capable to do on the features page, and see a beautif
   heading = "Navigate"
   [params.footer.contacts]
   enabled = true # enables/disables the whole contacts section in footer
-  heading = "Contact"
+  heading = "Contact Pomware"
   address = "Nicosia Cyprus & Thessaloniki Greece"
   mail = "pomwareltd@gmail.com"
   mail2 = "dundermifflinorders@fakemail.com"
@@ -139,18 +140,18 @@ Look at what this theme is capable to do on the features page, and see a beautif
 [menus]
 # PageRef should refer to the "translationKey" in `/content/<page>` frontmatter, names can be changed freely
   [[menus.main]]
-  name = "Home"
-  pageRef = "/"
-  weight = 1
-  [[menus.main]]
-  name = "Features"
-  pageRef = "pages/services"
+  name = "Poems"
+  pageRef = "poems"
   weight = 2
   [[menus.main]]
-  name = "The Office"
-  pageRef = "pages/office"
+  name = "Books"
+  pageRef = "books"
   weight = 3
   [[menus.main]]
-  name = "Contacts"
-  pageRef = "pages/contacts"
+  name = "My Story"
+  pageRef = "pages/services"
   weight = 4
+  [[menus.main]]
+  name = "Contact"
+  pageRef = "pages/contacts"
+  weight = 5

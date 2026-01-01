@@ -1,0 +1,44 @@
+back_to_poems = "Back to poems"
+books_subtitle = "Published books by the author."
+order_by_contact = "Contact us to order"
+contact_to_order = "Contact us"
+no_online_sales = "Online purchase and preview are not available yet."
+poems = "poems"
+pages = "pages"
+search_poems_placeholder = "Search poems..."
+search_poems_hint = "Type to filter titles."
+
+home_portrait_alt = "Portrait of the poet"
+home_portrait_placeholder = "The poet’s photo will be placed here."
+home_badge = "Poems • Books • Literature"
+
+home_author_name = "Aikaterini Pomportsi"
+home_tagline = "Words that travel — small stories, deep feelings."
+
+home_cta_poems = "Poems"
+home_cta_books = "Books"
+home_cta_about = "Bio"
+
+home_bio_title = "Short biography"
+home_bio_text = "Born in **Sochos, Thessaloniki** in **2029**, married to **Sergio Pombortsis**. Awarded by the **Amphictyony** and active in literary events. *(Demo text — will be replaced with real details.)*"
+
+home_highlight_1_title = "Place & Roots"
+home_highlight_1_text = "Sochos, Thessaloniki • Greece"
+
+home_highlight_2_title = "Awards"
+home_highlight_2_text = "Amphictyony of Hellenism • Competition distinctions"
+
+home_highlight_3_title = "Themes"
+home_highlight_3_text = "Love • Memory • Homeland • Light"
+
+home_fact_1_label = "Place"
+home_fact_1_value = "Sochos, Thessaloniki"
+
+home_fact_2_label = "Awards"
+home_fact_2_value = "Amphictyony • Competitions"
+
+home_fact_3_label = "Themes"
+home_fact_3_value = "Love • Memory • Light"
+
+home_quote = "Poetry is a way to hold on to light when everything grows dim."
+

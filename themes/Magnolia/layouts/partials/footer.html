@@ -31,10 +31,12 @@
         <!-- Grid column -->
         <div class="col-md-6 col-lg-6 col-xl-4 text-center text-md-start mb-4">
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold">
-            {{.Site.Params.footer.navigate.heading}}
-          </h6>
-          <hr class="mb-4 mt-0 d-inline-block" />
+           <div class="d-inline-block">
+            <h6 class="text-uppercase fw-bold mb-2">
+              {{ .Site.Params.footer.navigate.heading }}
+            </h6>
+            <hr class="mt-0 mb-4" style="width: 100%;" />
+          </div>
           {{- range .Site.Menus.main }}
           <p>
             <a href="{{ .URL }}" class="text-muted text-uppercase">{{.Name}}</a>
@@ -46,9 +48,9 @@
           <h3>{{.Site.Title}}</h3>
           <p class="mb-2">{{ .Site.Params.subtitle}}</p>
           <div class="fw-light mb-2">
-            {{ .Site.Params.footer.contacts.address }} <br />
-            {{ .Site.Params.footer.extradescription1 }} <br />
-            {{ .Site.Params.footer.extraDescription2 }}
+            <br />
+            <!-- {{ .Site.Params.footer.extradescription1 }} <br />
+            {{ .Site.Params.footer.extraDescription2 }} -->
           </div>
 
           {{if .Site.Params.schedules.enabledFooter }} {{range
@@ -62,19 +64,24 @@
           class="col-md-6 col-lg-6 col-xl-4 mb-4 text-center text-md-start text-xl-end"
         >
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold">
-            {{ .Site.Params.footer.contacts.heading}}
-          </h6>
-          <hr class="mb-4 mt-0 d-inline-block" />
+          <div class="d-inline-block">
+            <h6 class="text-uppercase fw-bold mb-2">
+              {{ .Site.Params.footer.contacts.heading }}
+            </h6>
+            <hr class="mt-0 mb-4" style="width: 100%;" />
+          </div>
+      
           {{ if .Site.Params.footer.contacts.address }}
-          <p class="d-xl-none">
+          <p>
             <i class="bi bi-building mx-2 d-xl-none"></i>
-            <span class="text-muted"
-              >{{ .Site.Params.footer.contacts.address }}</span
+            <span
+              class="text-muted"
+              >{{ .Site.Params.footer.contacts.address}}</span
             >
             <i class="bi bi-building mx-2 d-none d-xl-inline"></i>
           </p>
-          {{ end }} {{ if .Site.Params.footer.contacts.mail }}
+          {{ end }} 
+          {{ if .Site.Params.footer.contacts.mail }}
           <p>
             <i class="bi bi-envelope mx-2 d-xl-none"></i>
             <a

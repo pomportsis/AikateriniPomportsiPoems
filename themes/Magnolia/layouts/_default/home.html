@@ -1,74 +1,79 @@
 {{- define "main" -}}
 
-<div class="row gx-5 gy-3 mb-5">
-  <div class="col-lg-4">
-    <!-- profile picture-->
-    {{ with .Resources.GetMatch "main*" }}
-    <img
-      class="rounded profile-img img-fluid shadow"
-      src="{{.RelPermalink}}"
-      alt="Main image"
-    />
-    {{end}}
-  </div>
+<section class="container py-5 home-hero">
+  <div class="row align-items-center g-4">
 
-  <div class="col-lg-8">
-    <div class="text-center text-lg-start">
-      <div class="badge mb-4"></div>
-      <div class="fs-3 fw-light text-muted">
-        {{ .Site.Params.homepage.preTitle }}
-      </div>
-      <h1 class="display-1 fw-bolder">
-        <span class="d-inline">{{ .Site.Params.homepage.title }} </span>
+    <!-- Left: Oval portrait -->
+    <div class="col-12 col-lg-5 d-flex justify-content-center justify-content-lg-start">
+      {{ with .Resources.GetMatch "main*" }}
+        <div class="home-portrait-wrap shadow">
+            <img
+              src="{{ "img/pomportsi.jpeg" | relURL }}"
+              alt="{{ i18n "home_portrait_alt" }}"
+              class="home-portrait-img"
+            />
+
+        </div>
+      {{ else }}
+        <div class="home-portrait-wrap shadow d-flex align-items-center justify-content-center text-muted">
+          {{ i18n "home_portrait_placeholder" }}
+        </div>
+      {{ end }}
+    </div>
+
+    <!-- Right: Text -->
+    <div class="col-12 col-lg-7">
+      
+
+      <h1 class="home-title">
+        {{ i18n "home_author_name" }}
       </h1>
-      <p class="text-justify text-lg-start">
-        {{ .Site.Params.homepage.intro | markdownify}}
+
+      <p class="home-tagline">
+        {{ i18n "home_tagline" }}
       </p>
+
+      <!-- Bio (no buttons) -->
+      <div class="home-bio">
+        <div class="home-bio-title">{{ i18n "home_bio_title" }}</div>
+        <div class="home-bio-text">
+          {{ i18n "home_bio_text" | markdownify }}
+        </div>
+      </div>
+
+      <!-- Minimal “facts” row instead of 3 ugly cards -->
+      <div class="home-facts mt-4">
+        <div class="home-fact">
+          <div class="home-fact-label">{{ i18n "home_fact_1_label" }}</div>
+          <div class="home-fact-value">{{ i18n "home_fact_1_value" }}</div>
+        </div>
+
+        <div class="home-fact">
+          <div class="home-fact-label">{{ i18n "home_fact_2_label" }}</div>
+          <div class="home-fact-value">{{ i18n "home_fact_2_value" }}</div>
+        </div>
+
+        <div class="home-fact">
+          <div class="home-fact-label">{{ i18n "home_fact_3_label" }}</div>
+          <div class="home-fact-value">{{ i18n "home_fact_3_value" }}</div>
+        </div>
+      </div>
+
+      <!-- Optional: elegant quote line -->
+      <div class="home-quote mt-4">
+        <span class="home-quote-mark">“</span>{{ i18n "home_quote" }}<span class="home-quote-mark">”</span>
+      </div>
     </div>
-    <div
-      class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-lg-start mt-3 mt-lg-5"
-    >
-      <!-- button -->
-      <a
-        class="btn btn-primary btn-lg px-5 py-3 fs-6 fw-bolder shadow-sm"
-        href="{{ .Site.Params.homepage.mainButtonRef }}"
-        >{{ .Site.Params.homepage.mainButton }}</a
-      >
-      <a
-        class="btn btn-secondary btn-lg px-5 py-3 fs-6 fw-bolder shadow-sm"
-        href="{{ .Site.Params.homepage.secondButtonRef }}"
-        >{{ .Site.Params.homepage.secondButton }}</a
-      >
-    </div>
+
   </div>
-  <br />
-  <br />
-  <hr />
-</div>
+</section>
 
-<!-- Description -->
-<div class="mt-5 align-items-center">{{ .Content }}</div>
-<!--  -->
+{{ with .Content }}
+<section class="container pb-5">
+  <div class="home-content">
+    {{ . }}
+  </div>
+</section>
+{{ end }}
 
-<!-- latest posts -->
-
-{{with (site.GetPage "/posts")}}
-<hr />
-<h2 class="text-center my-4">{{$.Site.Params.homepage.blogTitle}}</h2>
-
-<!--  -->
-<div class="row g-3 mb-3">
-  {{range first 4 .Pages}} {{- partial "post-card.html" . -}} {{end}}
-</div>
-<div class="d-flex justify-content-center">
-  <a
-    class="btn btn-primary btn-lg px-5 py-3 fs-6 fw-bolder shadow-sm"
-    href="{{ .RelPermalink }}"
-    >{{$.Site.Params.homepage.blogButton}}</a
-  >
-</div>
-
-{{end}}
-
-<!--  -->
 {{- end -}}

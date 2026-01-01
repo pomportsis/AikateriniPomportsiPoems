@@ -1,0 +1,88 @@
+{{ define "content" }}
+  {{ template "main" . }}
+{{ end }}
+
+{{ define "main" }}
+<main class="container my-5">
+
+  <header class="mb-4 text-center">
+    <h1 class="mb-2">{{ .Title }}</h1>
+    <p class="text-muted mb-0">
+      {{ i18n "books_subtitle" | default "Published books by the author." }}
+    </p>
+  </header>
+
+  {{/* data/books.<lang>.toml => site.Data["books.<lang>"] */}}
+  {{ $booksByLang := index site.Data (printf "books.%s" .Lang) }}
+  {{ if not $booksByLang }}
+    {{ $booksByLang = index site.Data "books.en" }}
+  {{ end }}
+
+  <div class="books-list mx-auto">
+
+    {{ range $booksByLang.books }}
+      <div class="book-item">
+
+        {{ $bt := .title }}
+        <div class="book-cover">
+          {{ with .cover }}
+            <img src="{{ . | relURL }}" alt="{{ $bt }}">
+          {{ else }}
+            <div class="book-cover-placeholder"></div>
+          {{ end }}
+        </div>
+
+        <div class="book-info">
+
+          <div class="book-title-row">
+            <h3 class="book-title mb-0">{{ .title }}</h3>
+            {{ with .year }}
+              <span class="book-year">{{ . }}</span>
+            {{ end }}
+          </div>
+
+          {{ with .note }}
+            <p class="book-note mt-2 mb-3">{{ . }}</p>
+          {{ end }}
+
+          <div class="book-meta mb-2">
+            <span>{{ .pages }} {{ i18n "pages" | default "pages" }}</span>
+            <span class="dot">•</span>
+            <span>{{ .poems }} {{ i18n "poems" | default "poems" }}</span>
+          </div>
+
+          <div class="book-price mb-3">
+            {{ .price }}
+          </div>
+
+          {{ $contacts := site.GetPage "pages/contacts" }}
+          <a class="btn btn-outline-primary btn-sm"
+             href="{{ if $contacts }}{{ $contacts.RelPermalink }}{{ else }}{{ "/contacts/" | relLangURL }}{{ end }}">
+            {{ i18n "order_by_contact" | default "Contact us to order" }}
+          </a>
+
+        </div>
+      </div>
+    {{ end }}
+
+  </div>
+
+  <div class="text-center mt-5">
+    <p class="text-muted mb-2">
+      {{ i18n "no_online_sales" | default "Online purchase and preview are not available yet." }}
+    </p>
+
+    {{ $contacts := site.GetPage "pages/contacts" }}
+    {{ if $contacts }}
+      <a class="btn btn-primary" href="{{ $contacts.RelPermalink }}">
+        {{ i18n "contact_to_order" | default "Contact us" }}
+      </a>
+    {{ else }}
+      <a class="btn btn-primary" href="{{ "/contacts/" | relLangURL }}">
+        {{ i18n "contact_to_order" | default "Contact us" }}
+      </a>
+    {{ end }}
+  </div>
+
+</main>
+{{ end }}

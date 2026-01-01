@@ -1,0 +1,57 @@
+{{ define "content" }}
+  {{ template "main" . }}
+{{ end }}
+
+{{ define "main" }}
+<main class="container my-5">
+
+  <header class="mb-4">
+    <h1 class="mb-3">{{ .Title }}</h1>
+
+    <input
+      id="poemSearch"
+      class="form-control"
+      type="search"
+      placeholder="{{ i18n "search_poems_placeholder" | default "Search poems…" }}"
+    />
+    <small class="text-muted d-block mt-2">
+      {{ i18n "search_poems_hint" | default "Type to filter titles." }}
+    </small>
+  </header>
+
+  <ul id="poemList" class="list-unstyled">
+    {{ range .Pages.ByTitle }}
+      <li class="py-2 border-bottom" data-title="{{ .Title | lower }}">
+        <a class="text-decoration-none" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </li>
+    {{ end }}
+  </ul>
+
+  <p id="noResults" class="text-muted mt-4" style="display:none;">
+    {{ i18n "no_results" | default "No results." }}
+  </p>
+
+  <script>
+    (function () {
+      const input = document.getElementById("poemSearch");
+      const items = Array.from(document.querySelectorAll("#poemList li"));
+      const noResults = document.getElementById("noResults");
+
+      function filter() {
+        const q = (input.value || "").trim().toLowerCase();
+        let visible = 0;
+        items.forEach(li => {
+          const title = li.getAttribute("data-title") || "";
+          const show = title.includes(q);
+          li.style.display = show ? "" : "none";
+          if (show) visible++;
+        });
+        noResults.style.display = visible === 0 ? "" : "none";
+      }
+
+      input.addEventListener("input", filter);
+    })();
+  </script>
+
+</main>
+{{ end }}
