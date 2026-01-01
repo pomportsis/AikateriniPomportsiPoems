@@ -1,11 +1,11 @@
 [[books]]
-title = "Демонстрационная книга"
-year = 2023
-poems = 42
-pages = 96
-price = "€12"
-note = "Демонстрационное описание."
-cover = "img/books/demo.jpg"
+title = "Побег в мечту"
+year = 2008
+poems = 88
+pages = 127
+price = "Бесплатно"
+note = "Посвящается моим детям и всем четырём моим внукам"
+cover = "img/books/FigiStoOneiro.jpg"
 
 [[books]]
 title = "Энциклопедия словесности и искусств"

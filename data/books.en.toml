@@ -1,11 +1,11 @@
 [[books]]
-title = "Demo Book"
-year = 2023
-poems = 42
-pages = 96
-price = "€12"
-note = "Demo description."
-cover = "img/books/demo.jpg"
+title = "Escape into the Dream"
+year = 2008
+poems = 88
+pages = 127
+price = "Free"
+note = "Dedicated to my children and all four of my grandchildren"
+cover = "img/books/FigiStoOneiro.jpg"
 
 [[books]]
 title = "Encyclopedia of Letters and Arts"

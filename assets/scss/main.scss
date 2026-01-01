@@ -828,3 +828,21 @@ a.btn.btn-outline-secondary.mb-4:hover {
   .home-title{ font-size: 36px; }
   .home-portrait-wrap{ width: 280px; height: 280px; }
 }
+
+/* dedication / αφιέρωση (bottom-right, italic) */
+.poem-dedication{
+  margin-top: 2rem;
+  text-align: right;
+
+  font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.6;
+
+  color: rgba(0,0,0,0.72);
+  white-space: pre-wrap; /* keep line breaks if present */
+}
+
+.poem-dedication p{
+  margin: 0; /* avoid big paragraph spacing */
+}

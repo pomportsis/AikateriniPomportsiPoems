@@ -1,11 +1,11 @@
 [[books]]
-title = "Βιβλίο Demo"
-year = 2023
-poems = 42
-pages = 96
-price = "€12"
-note = "Περιγραφή demo."
-cover = "img/books/demo.jpg"
+title = "Φυγή στο Όνειρο"
+year = 2008
+poems = 88
+pages = 127
+price = "Δωρεάν"
+note = "Αφιερωμένο στα παιδία μου και στα τέσσερα εγγόνια μου"
+cover = "img/books/FigiStoOneiro.jpg"
 
 [[books]]
 title = "Εγκυκλοπαίδεια γραμμάτων και τεχνών"

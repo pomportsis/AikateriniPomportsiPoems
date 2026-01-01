@@ -16,12 +16,6 @@
 
       <h1 class="mb-3">{{ .Title }}</h1>
 
-      {{ with .Params.book }}
-        <div class="mb-3">
-          <span class="badge text-bg-light border">{{ . }}</span>
-        </div>
-      {{ end }}
-
       {{ with .Params.description }}
         <p class="lead mb-4">{{ . }}</p>
       {{ end }}
@@ -29,9 +23,14 @@
       <div class="poem">
         {{ .Content }}
       </div>
+
+      {{ with .Params.dedication }}
+        <div class="poem-dedication">
+          {{ . | markdownify }}
+        </div>
+      {{ end }}
+      
     </article>
-
   </div>
-
 </main>
 {{ end }}
