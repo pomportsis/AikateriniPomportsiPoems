@@ -19,11 +19,32 @@
     </small>
   </header>
 
+  <!-- Poem in every language
+  
   <ul id="poemList" class="list-unstyled">
     {{ range .Pages.ByTitle }}
       <li class="py-2 border-bottom" data-title="{{ .Title | lower }}">
         <a class="text-decoration-none" href="{{ .RelPermalink }}">{{ .Title }}</a>
       </li>
+    {{ end }}
+  </ul> -->
+
+  {{/* Always load poems from Greek site */}}
+  {{ $elSites := where site.Sites "Language.Lang" "el" }}
+
+  <ul id="poemList" class="list-unstyled">
+    {{ with (index $elSites 0) }}
+      {{ with (.GetPage "section" "poems") }}
+        {{ range .Pages.ByTitle }}
+          <li class="py-2 border-bottom" data-title="{{ .Title | lower }}">
+            <a class="text-decoration-none" href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </li>
+        {{ end }}
+      {{ else }}
+        <li class="text-muted py-2">Missing section: content/el/poems/_index.md</li>
+      {{ end }}
+    {{ else }}
+      <li class="text-muted py-2">Missing Greek site (el)</li>
     {{ end }}
   </ul>
 

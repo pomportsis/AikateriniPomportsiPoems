@@ -15,6 +15,7 @@ pages = 595
 price = "€40"
 note = "Амфиктиония эллинизма. Отдел литературы."
 cover = "img/books/AmfiktioniaEllinismou.jpeg"
+link = "https://bookpoint.gr/book/1301682"
 
 [[books]]
 title = "Литературный конкурс — «Среди воспетых стран, воспетая страна, ты склоняешься. Твой путь — на север и восток, на юг и запад, как путь солнца» (Костис Паламас)"
@@ -24,3 +25,4 @@ pages = 180
 price = "€10"
 note = "15-й литературный конкурс Общества писателей Северной Греции.\nОтмеченные стихотворения и прозаические произведения."
 cover = "img/books/LogotexnikosDiagonismos.jpeg"
+link = "https://bookpoint.gr/book/1262247"

@@ -55,12 +55,20 @@
             {{ .price }}
           </div>
 
-          {{ $contacts := site.GetPage "pages/contacts" }}
-          <a class="btn btn-outline-primary btn-sm"
-             href="{{ if $contacts }}{{ $contacts.RelPermalink }}{{ else }}{{ "/contacts/" | relLangURL }}{{ end }}">
-            {{ i18n "order_by_contact" | default "Contact us to order" }}
-          </a>
-
+          {{ with .link }}
+            <a class="btn btn-outline-primary btn-sm"
+              href="{{ . }}"
+              target="_blank"
+              rel="noopener noreferrer">
+              {{ i18n "publisher_page" | default "Publisher page" }}
+            </a>
+          {{ else }}
+            {{ $contacts := site.GetPage "pages/contacts" }}
+            <a class="btn btn-outline-primary btn-sm"
+              href="{{ if $contacts }}{{ $contacts.RelPermalink }}{{ else }}{{ "/contacts/" | relLangURL }}{{ end }}">
+              {{ i18n "order_by_contact" | default "Contact us to order" }}
+            </a>
+          {{ end }}
         </div>
       </div>
     {{ end }}
