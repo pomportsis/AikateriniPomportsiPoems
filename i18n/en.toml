@@ -8,37 +8,37 @@ pages = "pages"
 search_poems_placeholder = "Search poems..."
 search_poems_hint = "Type to filter titles."
 
-home_portrait_alt = "Portrait of the poet"
+home_portrait_alt = "Poet portrait"
 home_portrait_placeholder = "The poet’s photo will be placed here."
-home_badge = "Poems • Books • Literature"
+home_badge = "Poetry • Books • Literature"
 
 home_author_name = "Aikaterini Pomportsi"
-home_tagline = "Words that travel — small stories, deep feelings."
+home_tagline = "Words that travel — small stories, great feelings."
 
-home_cta_poems = "Poems"
-home_cta_books = "Books"
-home_cta_about = "Bio"
+home_intro = """
+Since my youth, poetry has been part of my life — for me it was and still is **an oasis for the soul**.  
+Here you will find poems and books written with love, memory, and faith in enduring values.
+"""
 
-home_bio_title = "Short biography"
-home_bio_text = "Born in **Sochos, Thessaloniki** in **2029**, married to **Sergio Pombortsis**. Awarded by the **Amphictyony** and active in literary events. *(Demo text — will be replaced with real details.)*"
+home_bio_title = "Short biographical note"
+home_bio_text = """
+Many of my poems have been published in literary magazines over the years, and some have been recognized in poetry competitions.
 
-home_highlight_1_title = "Place & Roots"
-home_highlight_1_text = "Sochos, Thessaloniki • Greece"
+I took part in the anthology of **77 award-winning poets** and in the **Thessaloniki Poetry Festivals (2000–2005)** with eight of my poems.
 
-home_highlight_2_title = "Awards"
-home_highlight_2_text = "Amphictyony of Hellenism • Competition distinctions"
+At the **1st Panhellenic Poetry Competition** held at the Ancient Agora of Thasos, my poem  
+**“Sunset in Kallirachi”** received the **3rd prize**.
 
-home_highlight_3_title = "Themes"
-home_highlight_3_text = "Love • Memory • Homeland • Light"
+My two poetry collections also include poems that waited for years — because poetry has no age.
+"""
 
-home_fact_1_label = "Place"
-home_fact_1_value = "Sochos, Thessaloniki"
+home_highlight_1_title = "Poetry"
+home_highlight_1_text = "Clear voice • Images • Emotion"
 
-home_fact_2_label = "Awards"
-home_fact_2_value = "Amphictyony • Competitions"
+home_highlight_2_title = "Recognition"
+home_highlight_2_text = "Anthology of 77 poets • Thessaloniki festivals"
 
-home_fact_3_label = "Themes"
-home_fact_3_value = "Love • Memory • Light"
+home_highlight_3_title = "Purpose"
+home_highlight_3_text = "Verses that touch souls — then and now"
 
-home_quote = "Poetry is a way to hold on to light when everything grows dim."
-
+home_quote = "Yellowed pages have no age — poetry remains timeless."

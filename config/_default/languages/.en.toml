@@ -2,7 +2,7 @@ disabled = false
 languageCode = 'en-US'
 languageName = 'English'
 title = 'Aikaterini Pomportsi' # This will go in the Header as well
-copyright = """Designed with [Hugo](https://gohugo.io/) by [Pomware Innovative Solutions LTD](https://github.com/ololiuhqui)\n
+copyright = """Designed with [Hugo](https://gohugo.io/) by [Pomware Innovative Solutions LTD](https://github.com/PomWare)\n
  Licensed under [MIT license](https://github.com/ololiuhqui/magnolia-free-hugo-theme/blob/main/LICENSE.md) \n 
  © All rights reserved by POMWARE INNOVATIVE SOLUTIONS LTD""" 
 contentDir = "content/en"
@@ -92,7 +92,7 @@ Look at what this theme is capable to do on the features page, and see a beautif
   callToAction= "Get connected with us on social networks >"
       [[params.socials.link]]
         name = "github"
-        link = "https://github.com/ololiuhqui/magnolia-free-hugo-theme"
+        link = "https://github.com/PomWare"
       [[params.socials.link]]
         name = "linkedin"
         link = ""

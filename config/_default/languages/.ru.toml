@@ -2,7 +2,7 @@ disabled = false
 languageCode = 'ru-RU'
 languageName = 'Русский'
 title = 'Катерина Поборци'
-copyright = """Создано с использованием [Hugo](https://gohugo.io/) компанией [Pomware Innovative Solutions LTD](https://github.com/ololiuhqui)\n
+copyright = """Создано с использованием [Hugo](https://gohugo.io/) компанией [Pomware Innovative Solutions LTD](https://github.com/PomWare)\n
 Лицензия [MIT](https://github.com/ololiuhqui/magnolia-free-hugo-theme/blob/main/LICENSE.md)\n
 © Все права защищены компанией POMWARE INNOVATIVE SOLUTIONS LTD"""
 contentDir="content/ru"
@@ -87,7 +87,7 @@ Guardate cosa è in grado di fare questo tema nella pagina delle caratteristiche
   callToAction = "Мы в социальных сетях >"
       [[params.socials.link]]
         name = "github"
-        link = "https://github.com/ololiuhqui/magnolia-free-hugo-theme"
+        link = "https://github.com/PomWare"
       [[params.socials.link]]
         name = "linkedin"
         link = ""

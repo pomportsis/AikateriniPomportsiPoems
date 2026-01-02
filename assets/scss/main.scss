@@ -284,7 +284,7 @@ footer {
 /* the “paper page” */
 .poem-page {
   position: relative;
-  max-width: 760px;
+  max-width: 980px;
   margin: 2rem auto;
   padding: 4rem 4rem 3.5rem;
   border-radius: 18px;
@@ -353,26 +353,30 @@ footer {
 
 /* the poem text: centered block, elegant spacing */
 .poem-page .poem {
-  margin-top: 1.5rem;
-  white-space: pre-wrap;
-  line-height: 2.05;
-  font-size: 1.1rem;
+  white-space: pre;        /* ONLY breaks where the poem breaks */
+  overflow-x: auto;        /* if a line is longer, scroll instead of wrapping */
+  overflow-wrap: normal;
+  word-break: normal;
 
-  /* “book page” feel */
-  max-width: 38em;
+  max-width: none;         /* important: don’t constrain poem width */
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+
+  line-height: 1.45;      
+  font-size: 1.05rem; 
 }
 
-/* stanza spacing if you separate stanzas with blank lines */
 .poem-page .poem p {
-  margin: 0;
+  margin: 0;               /* ✅ no paragraph gaps added by browser */
+  line-height: inherit;
+  text-align: center;
 }
 
 .poem-page .poem br + br {
   content: "";
   display: block;
-  margin-top: 1.2rem;
+  margin-top: 0.9rem;
 }
 
 .poem-page {
@@ -463,10 +467,36 @@ footer {
   letter-spacing: 0.2px;
 }
 
+.poem-page .poem-pre {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.08rem;
+
+  white-space: pre;          /* keep exactly as typed */
+  overflow-x: auto;          /* scroll if a line is long */
+  overflow-wrap: normal;
+  word-break: normal;
+
+  line-height: 1.55;         /* ✅ readable lines (not too tight) */
+}
+
+.poem-page .poem-pre {
+  /* If your poems have empty lines between stanzas, this helps */
+  tab-size: 2;
+}
+
+/* IMPORTANT: prevent Markdown styles from affecting poems */
+.poem-page .poem p,
+.poem-page .poem br {
+  display: none !important;  /* because poem is now in <pre> */
+}
 
 
 /* Center poem text */
 .poem-page .poem {
+  margin-top: 1.5rem;
   text-align: center;
 }
 
@@ -845,4 +875,84 @@ a.btn.btn-outline-secondary.mb-4:hover {
 
 .poem-dedication p{
   margin: 0; /* avoid big paragraph spacing */
+}
+
+/* ===== POEMS: responsive tweaks ===== */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .poem-shell {
+    max-width: 100%;
+    padding: 0 12px;
+  }
+
+  .poem-page {
+    max-width: 100%;
+    padding: 2.5rem 1.5rem 2.25rem; /* reduce 4rem */
+  }
+
+  .poem-page::after {
+    left: 1.5rem; /* keep the notebook margin aligned */
+  }
+
+  .poem-page h1 {
+    margin-bottom: 1.2rem;
+  }
+
+  .poem-page .poem-pre {
+    font-size: 1.02rem;
+    line-height: 1.5;
+  }
+}
+
+/* Phone */
+@media (max-width: 480px) {
+  .poem-page {
+    padding: 2rem 1.1rem 1.75rem;
+    border-radius: 14px;
+  }
+
+  .poem-page::after {
+    left: 1.15rem;
+    width: 1px;
+  }
+
+  .poem-page h1 {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+
+  .poem-page .poem-pre {
+    font-size: 0.98rem;
+    line-height: 1.45;
+  }
+}
+
+.home-intro{
+  color: rgba(0,0,0,.70);
+  line-height: 1.7;
+  font-size: 16px;
+  max-width: 70ch;
+}
+
+.home-bio--welcome{
+  background: rgba(255,255,255,.28);
+  border: 1px solid rgba(0,0,0,.12);
+}
+
+.home-bio-text--pretty{
+  line-height: 1.75;
+  color: rgba(0,0,0,.70);
+}
+
+.home-bio-text--pretty p{
+  margin: 0 0 12px 0;
+}
+
+.home-bio-text--pretty p:last-child{
+  margin-bottom: 0;
+}
+
+/* Better spacing on phones */
+@media (max-width: 992px){
+  .home-intro{ font-size: 15px; }
 }

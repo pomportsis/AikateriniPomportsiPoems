@@ -21,9 +21,9 @@
       {{ end }}
 
       <div class="poem">
-        {{ .Content }}
+        <pre class="poem-pre">{{ .RawContent }}</pre>
       </div>
-
+ 
       {{ with .Params.dedication }}
         <div class="poem-dedication">
           {{ . | markdownify }}

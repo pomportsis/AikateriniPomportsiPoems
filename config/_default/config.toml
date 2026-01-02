@@ -38,4 +38,5 @@ disableKinds = ['taxonomy', 'term']
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
+      hardWraps = true
       unsafe = true

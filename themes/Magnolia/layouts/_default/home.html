@@ -3,16 +3,11 @@
 <section class="container py-5 home-hero">
   <div class="row align-items-center g-4">
 
-    <!-- Left: Oval portrait -->
+    <!-- Left: Portrait -->
     <div class="col-12 col-lg-5 d-flex justify-content-center justify-content-lg-start">
       {{ with .Resources.GetMatch "main*" }}
         <div class="home-portrait-wrap shadow">
-            <img
-              src="{{ "img/pomportsi.jpeg" | relURL }}"
-              alt="{{ i18n "home_portrait_alt" }}"
-              class="home-portrait-img"
-            />
-
+          <img src="{{ "img/pomportsi.jpeg" | relURL }}" alt="{{ i18n "home_portrait_alt" }}" class="home-portrait-img" />
         </div>
       {{ else }}
         <div class="home-portrait-wrap shadow d-flex align-items-center justify-content-center text-muted">
@@ -21,59 +16,58 @@
       {{ end }}
     </div>
 
-    <!-- Right: Text -->
+    <!-- Right: Welcome + Bio -->
     <div class="col-12 col-lg-7">
-      
 
-      <h1 class="home-title">
+      <div class="home-pill mb-3">
+        {{ i18n "home_badge" }}
+      </div>
+
+      <h1 class="home-title mb-2">
         {{ i18n "home_author_name" }}
       </h1>
 
-      <p class="home-tagline">
+      <p class="home-tagline mb-4">
         {{ i18n "home_tagline" }}
       </p>
 
-      <!-- Bio (no buttons) -->
-      <div class="home-bio">
-        <div class="home-bio-title">{{ i18n "home_bio_title" }}</div>
-        <div class="home-bio-text">
+      <div class="home-intro mb-4">
+        {{ i18n "home_intro" | markdownify }}
+      </div>
+
+      <div class="home-bio home-bio--welcome">
+        <div class="home-bio-title">
+          {{ i18n "home_bio_title" }}
+        </div>
+
+        <div class="home-bio-text home-bio-text--pretty">
           {{ i18n "home_bio_text" | markdownify }}
         </div>
       </div>
 
-      <!-- Minimal “facts” row instead of 3 ugly cards -->
       <div class="home-facts mt-4">
         <div class="home-fact">
-          <div class="home-fact-label">{{ i18n "home_fact_1_label" }}</div>
-          <div class="home-fact-value">{{ i18n "home_fact_1_value" }}</div>
+          <div class="home-fact-label">{{ i18n "home_highlight_1_title" }}</div>
+          <div class="home-fact-value">{{ i18n "home_highlight_1_text" }}</div>
         </div>
 
         <div class="home-fact">
-          <div class="home-fact-label">{{ i18n "home_fact_2_label" }}</div>
-          <div class="home-fact-value">{{ i18n "home_fact_2_value" }}</div>
+          <div class="home-fact-label">{{ i18n "home_highlight_2_title" }}</div>
+          <div class="home-fact-value">{{ i18n "home_highlight_2_text" }}</div>
         </div>
 
         <div class="home-fact">
-          <div class="home-fact-label">{{ i18n "home_fact_3_label" }}</div>
-          <div class="home-fact-value">{{ i18n "home_fact_3_value" }}</div>
+          <div class="home-fact-label">{{ i18n "home_highlight_3_title" }}</div>
+          <div class="home-fact-value">{{ i18n "home_highlight_3_text" }}</div>
         </div>
       </div>
 
-      <!-- Optional: elegant quote line -->
       <div class="home-quote mt-4">
         <span class="home-quote-mark">“</span>{{ i18n "home_quote" }}<span class="home-quote-mark">”</span>
       </div>
+
     </div>
-
   </div>
 </section>
-
-{{ with .Content }}
-<section class="container pb-5">
-  <div class="home-content">
-    {{ . }}
-  </div>
-</section>
-{{ end }}
 
 {{- end -}}

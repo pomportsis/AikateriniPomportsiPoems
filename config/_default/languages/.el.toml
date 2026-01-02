@@ -2,7 +2,7 @@ disabled = false
 languageCode = 'el-EL'
 languageName = 'Ελληνικα'
 title = 'Αικατερίνη Πομπόρτση'
-copyright = """Σχεδιασμένο με [Hugo](https://gohugo.io/) από την [Pomware Innovative Solutions LTD](https://github.com/ololiuhqui)\n
+copyright = """Σχεδιασμένο με [Hugo](https://gohugo.io/) από την [Pomware Innovative Solutions LTD](https://github.com/PomWare)\n
 Με άδεια χρήσης [MIT](https://github.com/ololiuhqui/magnolia-free-hugo-theme/blob/main/LICENSE.md)\n
 © Όλα τα δικαιώματα διατηρούνται από την POMWARE INNOVATIVE SOLUTIONS LTD"""
 contentDir = "content/el"
@@ -88,7 +88,7 @@ ___
   callToAction = "Συνδεθείτε μαζί μας στα social media >"
       [[params.socials.link]]
         name = "github"
-        link = "https://github.com/ololiuhqui/magnolia-free-hugo-theme"
+        link = "https://github.com/PomWare"
       [[params.socials.link]]
         name = "linkedin"
         link = ""
