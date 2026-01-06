@@ -1,89 +1,89 @@
 [[books]]
-title = "The Sheltered Harbor of My Escape"
+title = "Укромная гавань моего бегства"
 year = 2012
 poems = 149
 pages = 192
-price = "Free"
-note = "Dedicated to the memory of my husband Sergios"
+price = "Бесплатно"
+note = "Посвящается памяти моего мужа Сергия"
 cover = "img/books/to_apanemo_limani_tis_figis_mou.jpg"
 hideAction = true
 
 [[books]]
-title = "Escape into the Dream"
+title = "Бегство в мечту"
 year = 2008
 poems = 88
 pages = 127
-price = "Free"
-note = "Dedicated to my children and my four grandchildren"
+price = "Бесплатно"
+note = "Посвящается моим детям и четырём внукам"
 cover = "img/books/FigiStoOneiro.jpg"
 hideAction = true
 
 [[books]]
-title = "Anthology – 20th World Poetry Competition"
+title = "Антология — XX Всемирного поэтического конкурса"
 year = 2022
 poems = 392
 pages = 595
 price = ""
-note = "Dedicated to the memory of the victims marking 100 years since the Asia Minor Catastrophe"
+note = "Посвящается памяти жертв 100-летия Малоазиатской катастрофы"
 cover = "img/books/anthologia_2022.jpg"
 hideAction = true
 
 [[books]]
-title = "Anthology – 10th World Poetry Competition"
+title = "Антология — X Всемирного поэтического конкурса"
 year = 2021
 poems = 392
 pages = 595
 price = ""
-note = "Greece’s roll call 1821–2021… cradle of spirit, culture, and peace"
+note = "Призыв Греции 1821–2021… колыбель духа, культуры и мира"
 cover = "img/books/anthologia_2021.jpg"
 hideAction = true
 
 [[books]]
-title = "Encyclopedia of Letters and Arts"
+title = "Энциклопедия литературы и искусств"
 year = 2021
 poems = 392
 pages = 595
 price = "40€"
-note = "Amphictyony of Hellenism. Literature Department."
+note = "Амфиктиония эллинизма. Литературное отделение."
 cover = "img/books/AmfiktioniaEllinismou.jpeg"
 link = "https://bookpoint.gr/book/1301682"
 
 [[books]]
-title = "Anthology – 9th World Poetry Competition"
+title = "Антология — IX Всемирного поэтического конкурса"
 year = 2021
 poems = 392
 pages = 595
 price = ""
-note = "Hellenism – Orthodoxy – Amphictyonies through time"
+note = "Эллинизм — Православие — Амфиктионии сквозь время"
 cover = "img/books/anthologia_2020.jpg"
 hideAction = true
 
 [[books]]
-title = "Encyclopedia of Letters and Arts"
+title = "Энциклопедия литературы и искусств"
 year = 2019
 poems = 392
 pages = 595
 price = ""
-note = "Amphictyony of Hellenism. Literature Department."
+note = "Амфиктиония эллинизма. Литературное отделение."
 cover = "img/books/AmfiktioniaEllinismou2019.jpg"
 hideAction = true
 
 [[books]]
-title = "Literary Competition – «Among the Praised Lands, Praised Land, Bow…» (Kostis Palamas)"
+title = "Литературный конкурс — «Среди воспетых стран…» (Костис Паламас)"
 year = 2019
 poems = 109
 pages = 180
 price = "10€"
-note = "15th Literary Competition of the Society of Writers of Northern Greece.\nAwarded poems and prose works."
+note = "15-й литературный конкурс Общества писателей Северной Греции.\nОтмеченные стихотворения и проза."
 cover = "img/books/LogotexnikosDiagonismos.jpeg"
 link = "https://bookpoint.gr/book/1262247"
 
 [[books]]
-title = "Anthology – 6th World Poetry Competition"
+title = "Антология — VI Всемирного поэтического конкурса"
 year = 2017
 poems = 392
 pages = 595
 price = ""
-note = "Religious, cosmic, social, erotic, satirical, etc."
+note = "Религиозная, космическая, социальная, любовная, сатирическая и др. тематика."
 cover = "img/books/anthologia_2017.jpg"
 hideAction = true
