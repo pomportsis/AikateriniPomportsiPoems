@@ -138,11 +138,12 @@ ___
     name = "Βιβλια"
     pageRef = "books"
     weight = 3
-  [[menus.main]]
-    name = "Η Ιστορια μου"
-    pageRef = "pages/services"
-    weight = 4
-  [[menus.main]]
-    name = "Επικοινωνια"
-    pageRef = "pages/contacts"
-    weight = 5
+  # [[menus.main]]
+  #   name = "Η Ιστορια μου"
+  #   pageRef = "pages/services"
+  #   weight = 4
+
+  # [[menus.main]]
+  #   name = "Επικοινωνια"
+  #   pageRef = "pages/contacts"
+  #   weight = 5

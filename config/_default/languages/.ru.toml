@@ -137,12 +137,4 @@ Guardate cosa è in grado di fare questo tema nella pagina delle caratteristiche
     name = "Книги"
     pageRef = "books"
     weight = 3
-  [[menus.main]]
-    name = "Моя история"
-    pageRef = "pages/services"
-    weight = 4
-  [[menus.main]]
-    name = "Контакты"
-    pageRef = "pages/contacts"
-    weight = 5
 

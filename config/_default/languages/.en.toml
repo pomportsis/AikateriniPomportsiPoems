@@ -147,11 +147,3 @@ Look at what this theme is capable to do on the features page, and see a beautif
   name = "Books"
   pageRef = "books"
   weight = 3
-  [[menus.main]]
-  name = "My Story"
-  pageRef = "pages/services"
-  weight = 4
-  [[menus.main]]
-  name = "Contact"
-  pageRef = "pages/contacts"
-  weight = 5
