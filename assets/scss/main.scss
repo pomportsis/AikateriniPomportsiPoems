@@ -953,3 +953,45 @@ a.btn.btn-outline-secondary.mb-4:hover {
 @media (max-width: 992px){
   .home-intro{ font-size: 15px; }
 }
+
+/* ===== BOOKS: simple section divider ===== */
+.books-section-break{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin: 28px auto 18px;
+  max-width: 980px;
+
+  color: rgba(0,0,0,0.55);
+  font-weight: 700;
+  letter-spacing: .2px;
+
+  /* keep it clean */
+  text-align: center;
+}
+
+.books-section-break__line{
+  flex: 1;
+  height: 1px;
+  background: rgba(0,0,0,0.18);
+}
+
+.books-section-break__text{
+  padding: 0 6px;
+  white-space: nowrap;
+}
+
+/* On small screens allow wrapping */
+@media (max-width: 520px){
+  .books-section-break{
+    flex-direction: column;
+    gap: 10px;
+  }
+  .books-section-break__text{
+    white-space: normal;
+  }
+  .books-section-break__line{
+    width: 100%;
+  }
+}

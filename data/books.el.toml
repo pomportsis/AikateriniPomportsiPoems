@@ -1,4 +1,14 @@
 [[books]]
+title = "Το απάνεμο λιμάνι της φυγής μου"
+year = 2012
+poems = 149
+pages = 192
+price = "Δωρεάν"
+note = "Αφιερωμένο στη μνήμη του συζήγου μου Σέργιου"
+cover = "img/books/to_apanemo_limani_tis_figis_mou.jpg"
+hideAction = true
+
+[[books]]
 title = "Φυγή στο Όνειρο"
 year = 2008
 poems = 88
@@ -6,6 +16,27 @@ pages = 127
 price = "Δωρεάν"
 note = "Αφιερωμένο στα παιδία μου και στα τέσσερα εγγόνια μου"
 cover = "img/books/FigiStoOneiro.jpg"
+hideAction = true
+
+[[books]]
+title = "Ανθολογία - Κ' Παγκόσμιου Ποιητικού Διαγωνισμού"
+year = 2022
+poems = 392
+pages = 595
+price = "" 
+note = "Αφιερώνεται στην μνήμη των θυμάτων των 100 χρόνων απο τη Μικρασιατική Καταστροφή"
+cover = "img/books/anthologia_2022.jpg"
+hideAction = true
+
+[[books]]
+title = "Ανθολογία - Ι' Παγκόσμιου Ποιητικού Διαγωνισμού"
+year = 2021
+poems = 392
+pages = 595
+price = "" 
+note = "Ελλάδος προσκλητήριο 1821-2021... κοιτίδα του πνεύματος, του πολιτισμού και της ειρήνης"
+cover = "img/books/anthologia_2021.jpg"
+hideAction = true
 
 [[books]]
 title = "Εγκυκλοπαίδεια γραμμάτων και τεχνών"
@@ -18,6 +49,26 @@ cover = "img/books/AmfiktioniaEllinismou.jpeg"
 link = "https://bookpoint.gr/book/1301682"
 
 [[books]]
+title = "Ανθολογία - Θ' Παγκόσμιου Ποιητικού Διαγωνισμού"
+year = 2021
+poems = 392
+pages = 595
+price = "" 
+note = "Ελληνισμός - Ορθοδοξία - Αμφικτυονίες στη διαχρονία"
+cover = "img/books/anthologia_2020.jpg"
+hideAction = true
+
+[[books]]
+title = "Εγκυκλοπαίδεια γραμμάτων και τεχνών"
+year = 2019
+poems = 392
+pages = 595
+price = ""
+note = "Αμφικτυονία Ελληνισμού. Τμήμα Λογοτεχνίας."
+cover = "img/books/AmfiktioniaEllinismou2019.jpg"
+hideAction = true
+
+[[books]]
 title = "Λογοτεχνικός διαγωνισμός - «Μες στις παινεμένες χώρες, χώρα παινεμένη, γέρνες. Εσένα ήταν ο δρόμος σε βοριά κι ανατολή, νοτιά και δύση σαν τον δρόμο του ήλιου» (Κωστής Παλαμάς)"
 year = 2019
 poems = 109
@@ -27,5 +78,13 @@ note = "15ος λογοτεχνικός διαγωνισμός της Εταιρ
 cover = "img/books/LogotexnikosDiagonismos.jpeg"
 link = "https://bookpoint.gr/book/1262247"
 
-
+[[books]]
+title = "Ανθολογία - ΣΤ' Παγκόσμιου Ποιητικού Διαγωνισμού"
+year = 2017
+poems = 392
+pages = 595
+price = "" 
+note = "Θρησκευτικό, συμπαντικό, κοινωνικό, ερωτικό, σατιρικό κ.λ.π."
+cover = "img/books/anthologia_2017.jpg"
+hideAction = true
 

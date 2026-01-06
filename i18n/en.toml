@@ -7,6 +7,7 @@ poems = "poems"
 pages = "pages"
 search_poems_placeholder = "Search poems..."
 search_poems_hint = "Type to filter titles."
+books_anthologies_divider = "Books featuring poems by the author"
 
 home_portrait_alt = "Poet portrait"
 home_portrait_placeholder = "The poet’s photo will be placed here."

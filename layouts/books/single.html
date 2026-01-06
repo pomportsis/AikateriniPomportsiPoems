@@ -6,11 +6,17 @@
 <main class="container my-5">
 
   <header class="mb-4 text-center">
-    <h1 class="mb-2">{{ .Title }}</h1>
-    <p class="text-muted mb-0">
-      {{ i18n "books_subtitle" | default "Published books by the author." }}
-    </p>
+    <h1 class="mb-3">{{ .Title }}</h1>
+
+    <div class="books-section-break books-section-break--subtitle">
+      <span class="books-section-break__line"></span>
+      <span class="books-section-break__text">
+        {{ i18n "books_subtitle" | default "Published books by the author." }}
+      </span>
+      <span class="books-section-break__line"></span>
+    </div>
   </header>
+
 
   {{/* data/books.<lang>.toml => site.Data["books.<lang>"] */}}
   {{ $booksByLang := index site.Data (printf "books.%s" .Lang) }}
@@ -20,12 +26,24 @@
 
   <div class="books-list mx-auto">
 
-    {{ range $booksByLang.books }}
+    {{ range $i, $b := $booksByLang.books }}
+
+      {{/* Divider after first 2 books */}}
+      {{ if eq $i 2 }}
+        <div class="books-section-break" aria-hidden="true">
+          <span class="books-section-break__line"></span>
+          <span class="books-section-break__text">
+            {{ i18n "books_anthologies_divider" | default "Books featuring poems by the author" }}
+          </span>
+          <span class="books-section-break__line"></span>
+        </div>
+      {{ end }}
+
       <div class="book-item">
 
-        {{ $bt := .title }}
+        {{ $bt := $b.title }}
         <div class="book-cover">
-          {{ with .cover }}
+          {{ with $b.cover }}
             <img src="{{ . | relURL }}" alt="{{ $bt }}">
           {{ else }}
             <div class="book-cover-placeholder"></div>
@@ -35,42 +53,48 @@
         <div class="book-info">
 
           <div class="book-title-row">
-            <h3 class="book-title mb-0">{{ .title }}</h3>
-            {{ with .year }}
+            <h3 class="book-title mb-0">{{ $b.title }}</h3>
+            {{ with $b.year }}
               <span class="book-year">{{ . }}</span>
             {{ end }}
           </div>
 
-          {{ with .note }}
+          {{ with $b.note }}
             <p class="book-note mt-2 mb-3">{{ . }}</p>
           {{ end }}
 
           <div class="book-meta mb-2">
-            <span>{{ .pages }} {{ i18n "pages" | default "pages" }}</span>
+            <span>{{ $b.pages }} {{ i18n "pages" | default "pages" }}</span>
             <span class="dot">•</span>
-            <span>{{ .poems }} {{ i18n "poems" | default "poems" }}</span>
+            <span>{{ $b.poems }} {{ i18n "poems" | default "poems" }}</span>
           </div>
 
           <div class="book-price mb-3">
-            {{ .price }}
+            {{ $b.price }}
           </div>
 
-          {{ with .link }}
-            <a class="btn btn-outline-primary btn-sm"
-              href="{{ . }}"
-              target="_blank"
-              rel="noopener noreferrer">
-              {{ i18n "publisher_page" | default "Publisher page" }}
-            </a>
-          {{ else }}
-            {{ $contacts := site.GetPage "pages/contacts" }}
-            <a class="btn btn-outline-primary btn-sm"
-              href="{{ if $contacts }}{{ $contacts.RelPermalink }}{{ else }}{{ "/contacts/" | relLangURL }}{{ end }}">
-              {{ i18n "order_by_contact" | default "Contact us to order" }}
-            </a>
+          {{ if not $b.hideAction }}
+
+            {{ with $b.link }}
+              <a class="btn btn-outline-primary btn-sm"
+                 href="{{ . }}"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                {{ i18n "publisher_page" | default "Publisher page" }}
+              </a>
+            {{ else }}
+              {{ $contacts := site.GetPage "pages/contacts" }}
+              <a class="btn btn-outline-primary btn-sm"
+                 href="{{ if $contacts }}{{ $contacts.RelPermalink }}{{ else }}{{ "/contacts/" | relLangURL }}{{ end }}">
+                {{ i18n "order_by_contact" | default "Contact us to order" }}
+              </a>
+            {{ end }}
+
           {{ end }}
+
         </div>
       </div>
+
     {{ end }}
 
   </div>

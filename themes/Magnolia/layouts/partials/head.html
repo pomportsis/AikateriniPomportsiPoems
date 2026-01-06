@@ -111,6 +111,7 @@
   {{/* This adds bootstrap CSS */}}
   {{ $options := (dict "targetPath" "css/styles.css" "outputStyle" "compressed") }}
   {{ $style := resources.Get "/scss/main.scss" | toCSS $options | minify }}
+  
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" media="screen" />
 
   {{/* Favicon */}}

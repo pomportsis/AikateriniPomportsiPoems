@@ -7,6 +7,7 @@ poems = "ποιήματα"
 pages = "σελίδες"
 search_poems_placeholder = "Αναζήτηση ποιημάτων..."
 search_poems_hint = "Πληκτρολογήστε για φιλτράρισμα τίτλων."
+books_anthologies_divider = "Βιβλία στα οποία εκδόθηκαν ποιήματα της συγγραφέας"
 
 home_portrait_alt = "Πορτρέτο της ποιήτριας"
 home_portrait_placeholder = "Εδώ θα μπει η φωτογραφία της ποιήτριας."
