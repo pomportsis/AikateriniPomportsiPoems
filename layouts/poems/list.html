@@ -17,17 +17,46 @@
     <small class="text-muted d-block mt-2">
       {{ i18n "search_poems_hint" | default "Type to filter titles." }}
     </small>
-  </header>
 
-  <!-- Poem in every language
-  
-  <ul id="poemList" class="list-unstyled">
-    {{ range .Pages.ByTitle }}
-      <li class="py-2 border-bottom" data-title="{{ .Title | lower }}">
-        <a class="text-decoration-none" href="{{ .RelPermalink }}">{{ .Title }}</a>
-      </li>
-    {{ end }}
-  </ul> -->
+    <!-- Book filters -->
+    <div class="mt-4">
+      <div class="fw-semibold mb-2">
+        {{ i18n "filter_by_book_label" | default "Filter by book" }}
+      </div>
+
+      <div class="d-flex flex-wrap gap-4 align-items-center">
+        <div class="form-check">
+          <input
+            class="form-check-input book-filter"
+            type="checkbox"
+            id="bookFilterFigi"
+            value="Φυγη στο ονειρο"
+            checked
+          >
+          <label class="form-check-label" for="bookFilterFigi">
+            {{ i18n "book_filter_figi" | default "Φυγή στο Όνειρο" }}
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input
+            class="form-check-input book-filter"
+            type="checkbox"
+            id="bookFilterLimani"
+            value="Το απανεμο λιμανι της φυγης μου"
+            checked
+          >
+          <label class="form-check-label" for="bookFilterLimani">
+            {{ i18n "book_filter_limani" | default "Το απάνεμο λιμάνι της φυγής μου" }}
+          </label>
+        </div>
+      </div>
+
+      <small class="text-muted d-block mt-2">
+        {{ i18n "filter_by_book_hint" | default "Select one or more books." }}
+      </small>
+    </div>
+  </header>
 
   {{/* Always load poems from Greek site */}}
   {{ $elSites := where site.Sites "Language.Lang" "el" }}
@@ -36,7 +65,11 @@
     {{ with (index $elSites 0) }}
       {{ with (.GetPage "section" "poems") }}
         {{ range .Pages.ByTitle }}
-          <li class="py-2 border-bottom" data-title="{{ .Title | lower }}">
+          <li
+            class="py-2 border-bottom"
+            data-title="{{ .Title | lower }}"
+            data-book="{{ (or .Params.bookName "") | lower }}"
+          >
             <a class="text-decoration-none" href="{{ .RelPermalink }}">{{ .Title }}</a>
           </li>
         {{ end }}
@@ -57,20 +90,45 @@
       const input = document.getElementById("poemSearch");
       const items = Array.from(document.querySelectorAll("#poemList li"));
       const noResults = document.getElementById("noResults");
+      const bookChecks = Array.from(document.querySelectorAll(".book-filter"));
+
+      function getSelectedBooksLower() {
+        return bookChecks
+          .filter(cb => cb.checked)
+          .map(cb => (cb.value || "").trim().toLowerCase());
+      }
 
       function filter() {
         const q = (input.value || "").trim().toLowerCase();
+        const selectedBooks = getSelectedBooksLower();
+
         let visible = 0;
+
         items.forEach(li => {
-          const title = li.getAttribute("data-title") || "";
-          const show = title.includes(q);
+          const title = (li.getAttribute("data-title") || "").toLowerCase();
+          const book  = (li.getAttribute("data-book")  || "").toLowerCase();
+
+          // hide any non-poem helper rows
+          const isPoemRow = li.hasAttribute("data-title");
+
+          const matchesText = title.includes(q);
+
+          // If user unchecks all books: show none (intentional)
+          const matchesBook = selectedBooks.length > 0 && selectedBooks.includes(book);
+
+          const show = isPoemRow ? (matchesText && matchesBook) : true;
+
           li.style.display = show ? "" : "none";
-          if (show) visible++;
+          if (show && isPoemRow) visible++;
         });
+
         noResults.style.display = visible === 0 ? "" : "none";
       }
 
       input.addEventListener("input", filter);
+      bookChecks.forEach(cb => cb.addEventListener("change", filter));
+
+      filter();
     })();
   </script>
 
