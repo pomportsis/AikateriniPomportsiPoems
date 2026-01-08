@@ -1,4 +1,4 @@
-baseURL = "https://pomportsis.github.io/AikateriniPomportsiPoems/"
+baseURL = "https://aikaterinipomportsi.gr/"
 languageCode = ''
 title = 'Magnolia Default' # This can get overwritten by the single language files
 defaultContentLanguage = 'el'
