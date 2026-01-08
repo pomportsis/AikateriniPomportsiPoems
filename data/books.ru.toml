@@ -21,8 +21,6 @@ hideAction = true
 [[books]]
 title = "Антология — XX Всемирного поэтического конкурса"
 year = 2022
-poems = 392
-pages = 595
 price = ""
 note = "Посвящается памяти жертв 100-летия Малоазиатской катастрофы"
 cover = "img/books/anthologia_2022.jpg"
@@ -31,8 +29,6 @@ hideAction = true
 [[books]]
 title = "Антология — X Всемирного поэтического конкурса"
 year = 2021
-poems = 392
-pages = 595
 price = ""
 note = "Призыв Греции 1821–2021… колыбель духа, культуры и мира"
 cover = "img/books/anthologia_2021.jpg"
@@ -41,7 +37,6 @@ hideAction = true
 [[books]]
 title = "Энциклопедия литературы и искусств"
 year = 2021
-poems = 392
 pages = 595
 price = "40€"
 note = "Амфиктиония эллинизма. Литературное отделение."
@@ -51,8 +46,6 @@ link = "https://bookpoint.gr/book/1301682"
 [[books]]
 title = "Антология — IX Всемирного поэтического конкурса"
 year = 2021
-poems = 392
-pages = 595
 price = ""
 note = "Эллинизм — Православие — Амфиктионии сквозь время"
 cover = "img/books/anthologia_2020.jpg"
@@ -61,8 +54,6 @@ hideAction = true
 [[books]]
 title = "Энциклопедия литературы и искусств"
 year = 2019
-poems = 392
-pages = 595
 price = ""
 note = "Амфиктиония эллинизма. Литературное отделение."
 cover = "img/books/AmfiktioniaEllinismou2019.jpg"
@@ -71,7 +62,6 @@ hideAction = true
 [[books]]
 title = "Литературный конкурс — «Среди воспетых стран…» (Костис Паламас)"
 year = 2019
-poems = 109
 pages = 180
 price = "10€"
 note = "15-й литературный конкурс Общества писателей Северной Греции.\nОтмеченные стихотворения и проза."
@@ -81,8 +71,6 @@ link = "https://bookpoint.gr/book/1262247"
 [[books]]
 title = "Антология — VI Всемирного поэтического конкурса"
 year = 2017
-poems = 392
-pages = 595
 price = ""
 note = "Религиозная, космическая, социальная, любовная, сатирическая и др. тематика."
 cover = "img/books/anthologia_2017.jpg"

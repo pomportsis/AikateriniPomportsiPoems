@@ -64,9 +64,20 @@
           {{ end }}
 
           <div class="book-meta mb-2">
-            <span>{{ $b.pages }} {{ i18n "pages" | default "pages" }}</span>
-            <span class="dot">•</span>
-            <span>{{ $b.poems }} {{ i18n "poems" | default "poems" }}</span>
+            {{ $hasPages := isset $b "pages" }}
+            {{ $hasPoems := isset $b "poems" }}
+
+            {{ if $hasPages }}
+              <span>{{ $b.pages }} {{ i18n "pages" | default "pages" }}</span>
+            {{ end }}
+
+            {{ if and $hasPages $hasPoems }}
+              <span class="dot">•</span>
+            {{ end }}
+
+            {{ if $hasPoems }}
+              <span>{{ $b.poems }} {{ i18n "poems" | default "poems" }}</span>
+            {{ end }}
           </div>
 
           <div class="book-price mb-3">

@@ -21,8 +21,6 @@ hideAction = true
 [[books]]
 title = "Anthology – 20th World Poetry Competition"
 year = 2022
-poems = 392
-pages = 595
 price = ""
 note = "Dedicated to the memory of the victims marking 100 years since the Asia Minor Catastrophe"
 cover = "img/books/anthologia_2022.jpg"
@@ -31,8 +29,6 @@ hideAction = true
 [[books]]
 title = "Anthology – 10th World Poetry Competition"
 year = 2021
-poems = 392
-pages = 595
 price = ""
 note = "Greece’s roll call 1821–2021… cradle of spirit, culture, and peace"
 cover = "img/books/anthologia_2021.jpg"
@@ -41,7 +37,6 @@ hideAction = true
 [[books]]
 title = "Encyclopedia of Letters and Arts"
 year = 2021
-poems = 392
 pages = 595
 price = "40€"
 note = "Amphictyony of Hellenism. Literature Department."
@@ -51,8 +46,6 @@ link = "https://bookpoint.gr/book/1301682"
 [[books]]
 title = "Anthology – 9th World Poetry Competition"
 year = 2021
-poems = 392
-pages = 595
 price = ""
 note = "Hellenism – Orthodoxy – Amphictyonies through time"
 cover = "img/books/anthologia_2020.jpg"
@@ -61,8 +54,6 @@ hideAction = true
 [[books]]
 title = "Encyclopedia of Letters and Arts"
 year = 2019
-poems = 392
-pages = 595
 price = ""
 note = "Amphictyony of Hellenism. Literature Department."
 cover = "img/books/AmfiktioniaEllinismou2019.jpg"
@@ -71,7 +62,6 @@ hideAction = true
 [[books]]
 title = "Literary Competition – «Among the Praised Lands, Praised Land, Bow…» (Kostis Palamas)"
 year = 2019
-poems = 109
 pages = 180
 price = "10€"
 note = "15th Literary Competition of the Society of Writers of Northern Greece.\nAwarded poems and prose works."
@@ -81,8 +71,6 @@ link = "https://bookpoint.gr/book/1262247"
 [[books]]
 title = "Anthology – 6th World Poetry Competition"
 year = 2017
-poems = 392
-pages = 595
 price = ""
 note = "Religious, cosmic, social, erotic, satirical, etc."
 cover = "img/books/anthologia_2017.jpg"
