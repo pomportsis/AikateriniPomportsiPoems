@@ -19,7 +19,7 @@ disableKinds = ['taxonomy', 'term']
   # use LLMs that gather data with these crawlers from across the web
 [params.robots]
   blockAIcrawlers = false
-
+ 
 [module]
     [[module.mounts]]
       source = "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
