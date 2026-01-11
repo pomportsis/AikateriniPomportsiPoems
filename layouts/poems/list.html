@@ -65,12 +65,13 @@
     {{ with (index $elSites 0) }}
       {{ with (.GetPage "section" "poems") }}
         {{ range .Pages.ByTitle }}
+          {{ $slug := .File.ContentBaseName }}
           <li
             class="py-2 border-bottom"
             data-title="{{ .Title | lower }}"
             data-book="{{ (or .Params.bookName "") | lower }}"
           >
-            <a class="text-decoration-none" href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <a class="text-decoration-none" href="{{ (printf "poems/%s/" $slug) | relLangURL }}">{{ .Title }}</a>
           </li>
         {{ end }}
       {{ else }}
@@ -108,9 +109,7 @@
           const title = (li.getAttribute("data-title") || "").toLowerCase();
           const book  = (li.getAttribute("data-book")  || "").toLowerCase();
 
-          // hide any non-poem helper rows
           const isPoemRow = li.hasAttribute("data-title");
-
           const matchesText = title.includes(q);
 
           // If user unchecks all books: show none (intentional)

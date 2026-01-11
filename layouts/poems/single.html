@@ -9,28 +9,52 @@
       </a>
     </div>
 
+    {{/* Defaults from current page (Greek pages will use these) */}}
+    {{ $title := .Title }}
+    {{ $bookName := .Params.bookName }}
+    {{ $desc := .Params.description }}
+    {{ $raw := .RawContent }}
+    {{ $ded := .Params.dedication }}
+
+    {{/* If we are NOT in EL, pull everything from the Greek poem with same slug */}}
+    {{ if ne .Lang "el" }}
+      {{ $slug := .File.ContentBaseName }}
+      {{ $elSites := where site.Sites "Language.Lang" "el" }}
+
+      {{ with (index $elSites 0) }}
+        {{ $elPoem := .GetPage (printf "poems/%s" $slug) }}
+        {{ with $elPoem }}
+          {{ $title = .Title }}
+          {{ $bookName = .Params.bookName }}
+          {{ $desc = .Params.description }}
+          {{ $raw = .RawContent }}
+          {{ $ded = .Params.dedication }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
     <article class="poem-page">
-      {{ with .Params.bookName }}
+      {{ with $bookName }}
         <div class="text-muted text-uppercase small mb-2">{{ . }}</div>
       {{ end }}
 
-      <h1 class="mb-3">{{ .Title }}</h1>
+      <h1 class="mb-3">{{ $title }}</h1>
 
-      {{ with .Params.description }}
+      {{ with $desc }}
         <p class="lead mb-4">{{ . }}</p>
       {{ end }}
 
       <div class="poem">
-        <pre class="poem-pre">{{ .RawContent }}</pre>
+        <pre class="poem-pre">{{ $raw }}</pre>
       </div>
- 
-      {{ with .Params.dedication }}
+
+      {{ with $ded }}
         <div class="poem-dedication">
           {{ . | markdownify }}
         </div>
       {{ end }}
-      
     </article>
+
   </div>
 </main>
 {{ end }}
