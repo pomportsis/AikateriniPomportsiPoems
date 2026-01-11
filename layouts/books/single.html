@@ -39,7 +39,7 @@
         </div>
       {{ end }}
 
-      <div class="book-item">
+      <div class="book-item" id="book-{{ $i }}">
 
         {{ $bt := $b.title }}
         <div class="book-cover">
@@ -128,4 +128,43 @@
   </div> -->
 
 </main>
+
+  {{/* =========================
+     Structured data: Book + Author
+     Put this once per book list page
+     ========================= */}}
+
+  {{ $authorUrl := .Site.Home.Permalink }}
+  {{ $authorName := i18n "person_name" | default (i18n "home_author_name") | default "Αικατερίνη Πομπόρτση" }}
+
+  {{ range $i, $b := $booksByLang.books }}
+    {{/* Create a stable URL for each book item:
+        If you have a real page per book, replace this with that URL.
+        Otherwise we link to the books page with a hash.
+    */}}
+    {{ $bookUrl := printf "%s#book-%d" .Permalink $i }}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": {{ $b.title | jsonify }},
+  "url": {{ $bookUrl | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": {{ $authorName | jsonify }},
+    "url": {{ $authorUrl | jsonify }}
+  },
+  {{ with $b.year }}"datePublished": {{ printf "%v" . | jsonify }},{{ end }}
+  "inLanguage": {{ $.Lang | jsonify }},
+  {{ if isset $b "pages" }}"numberOfPages": {{ $b.pages }},{{ end }}
+  {{ if isset $b "price" }}"offers": { "@type": "Offer", "price": {{ $b.price | jsonify }}, "priceCurrency": "EUR" },{{ end }}
+  {{ with $b.link }}"sameAs": {{ . | jsonify }},{{ end }}
+  {{ with $b.cover }}"image": {{ (printf "%s%s" $.Site.BaseURL (strings.TrimPrefix "/" (. | relURL))) | jsonify }},{{ end }}
+  "isAccessibleForFree": {{ if eq $b.price "Δωρεάν" }}true{{ else }}false{{ end }}
+}
+</script>
+
+  {{ end }}
+
 {{ end }}
