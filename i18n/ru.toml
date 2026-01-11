@@ -17,7 +17,7 @@ home_portrait_alt = "Портрет поэтессы"
 home_portrait_placeholder = "Здесь будет фотография поэтессы."
 home_badge = "Поэзия • Книги • Литература"
 
-home_author_name = "Екатерина Помпорти"
+home_author_name = "Екатерина Поборчии"
 home_tagline = "Слова, которые путешествуют — маленькие истории, большие чувства."
 
 home_intro = """
@@ -48,3 +48,21 @@ home_highlight_3_text = "Строки, которые трогают души �
 
 home_quote = "Пожелтевшие страницы не имеют возраста — поэзия вечна."
 publisher_page = "Страница издателя"
+
+
+seo_home_title = "Айкатерини (Кайти) Поборчии"
+seo_home_desc  = "Официальный сайт Айкатерини (Кайти) Поборчии. Поэзия, книги, новости и контакты."
+
+person_name  = "Айкатерини Поборчии"
+
+# Alternate spellings / variants people may type
+person_alt_1 = "Кайти Поборчии"
+person_alt_2 = "Айкатерина Поборчий"     
+person_alt_3 = "Аикатерини Поборчии"   
+person_alt_4 = "Кайти Поборчии"          
+person_alt_5 = "Aikaterini Pomportsi"
+person_alt_6 = "Kaiti Pomportsi"
+person_alt_7 = "Αικατερίνη Πομπόρτση"
+person_alt_8 = "Καίτη Πομπόρτση"
+person_alt_9 = "Αικατερινη Πομπορτση"
+person_alt_10 = "Καιτη Πομπορτση"

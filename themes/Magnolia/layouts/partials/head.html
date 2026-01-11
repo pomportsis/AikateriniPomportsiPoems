@@ -1,129 +1,140 @@
 <head>
+  {{/* =========================
+     SEO: Title + Description (i18n-aware)
+     ========================= */}}
+
+  {{ $siteTitle := .Site.Title }}
+  {{ $title := "" }}
+
   {{ if .IsHome }}
-    <title>
-      {{ .Page.Title }}
-      {{ .Site.Title }}
-      {{ .Site.Params.subtitle }}
-    </title>
+    {{ $title = printf "%s | %s" (i18n "seo_home_title") $siteTitle }}
   {{ else }}
-    <title>
-      {{ .Page.Title }} |
-      {{ .Site.Title }}
-      {{ .Site.Params.subtitle }}
-    </title>
+    {{ $title = printf "%s | %s" .Page.Title $siteTitle }}
   {{ end }}
+  <title>{{ $title }}</title>
+
   <meta charset="utf-8" />
-  <meta
-    name="description"
-    {{ if.Page.Description }}
-      content="{{ .Page.Description }}"
-    {{ else }}
-      content="{{ .Page.Summary }}"
-    {{ end }}
-  />
+
+  {{ $desc := "" }}
+  {{ if .Page.Description }}
+    {{ $desc = .Page.Description }}
+  {{ else if .IsHome }}
+    {{ $desc = i18n "seo_home_desc" }}
+  {{ else }}
+    {{ $desc = .Page.Summary | plainify }}
+  {{ end }}
+  <meta name="description" content="{{ $desc }}" />
 
   <meta name="dc.relation" content="{{ .Site.BaseURL }}" />
-
   <meta name="robots" content="index,follow" />
-  
 
+  {{/* Canonical */}}
+  <link rel="canonical" href="{{ .Permalink }}" />
 
-  <!-- Google / Search Engine Tags -->
-  <meta
-    itemprop="name"
-    content="{{ .Page.Title }} {{ .Site.Title }} {{ .Site.Params.subtitle }}"
-  />
-  <meta
-    itemprop="description"
-    {{ if.Page.Description }}
-      content="{{ .Page.Description }}"
-    {{ else }}
-      content="{{ .Page.Summary }}"
+  {{/* hreflang for i18n */}}
+  {{ if .IsTranslated }}
+    {{ range .AllTranslations }}
+      <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />
     {{ end }}
-  />
+    <link rel="alternate" hreflang="x-default" href="{{ .Site.Home.Permalink }}" />
+  {{ else }}
+    {{/* If page is not translated, still provide x-default for homepage */}}
+    {{ if .IsHome }}
+      <link rel="alternate" hreflang="x-default" href="{{ .Site.Home.Permalink }}" />
+    {{ end }}
+  {{ end }}
+
+  {{/* =========================
+     Google / Search Engine Tags
+     ========================= */}}
+  <meta itemprop="name" content="{{ $title }}" />
+  <meta itemprop="description" content="{{ $desc }}" />
 
   {{/* Image */}}
   {{ with .Resources.GetMatch "images/featured.*" }}
-    <meta itemprop="image" content="{{ . }}" />
+    <meta itemprop="image" content="{{ .Permalink }}" />
   {{ else }}
-    <meta
-      itemprop="image"
-      content="{{ resources.GetMatch "img/meta-image.*" | absURL }}"
-    />
+    {{ with (resources.GetMatch "img/meta-image.*") }}
+      <meta itemprop="image" content="{{ .Permalink }}" />
+    {{ end }}
   {{ end }}
 
-
-  <!-- Facebook Meta Tags -->
+  {{/* =========================
+     OpenGraph
+     ========================= */}}
   <meta property="og:url" content="{{ .Permalink }}" />
   <meta property="og:type" content="website" />
-  <meta
-    property="og:title"
-    content="{{ .Page.Title }} {{ .Site.Title }} {{ .Site.Params.subtitle }}"
-  />
-  <meta
-    property="og:description"
-    {{ if.Page.Description }}
-      content="{{ .Page.Description }}"
-    {{ else }}
-      content="{{ .Page.Summary }}"
-    {{ end }}
-  />
+  <meta property="og:title" content="{{ $title }}" />
+  <meta property="og:description" content="{{ $desc }}" />
+
   {{ with .Resources.GetMatch "images/featured.*" }}
-    <meta property="og:image" content="{{ . }}" />
+    <meta property="og:image" content="{{ .Permalink }}" />
   {{ else }}
-    <meta
-      property="og:image"
-      content="{{ resources.GetMatch "img/meta-image.*" | absURL }}"
-    />
+    {{ with (resources.GetMatch "img/meta-image.*") }}
+      <meta property="og:image" content="{{ .Permalink }}" />
+    {{ end }}
   {{ end }}
 
-
-  <!-- Twitter Meta Tags -->
+  {{/* =========================
+     Twitter
+     ========================= */}}
   <meta name="twitter:card" content="summary_large_image" />
-  <meta
-    name="twitter:title"
-    content="{{ .Page.Title }} {{ .Site.Title }} {{ .Site.Params.subtitle }}"
-  />
-  <meta
-    name="twitter:description"
-    {{ if.Page.Description }}
-      content="{{ .Page.Description }}"
-    {{ else }}
-      content="{{ .Page.Summary }}"
-    {{ end }}
-  />
+  <meta name="twitter:title" content="{{ $title }}" />
+  <meta name="twitter:description" content="{{ $desc }}" />
+
   {{ with .Resources.GetMatch "images/featured.*" }}
-    <meta name="twitter:image" content="{{ . }}" />
+    <meta name="twitter:image" content="{{ .Permalink }}" />
   {{ else }}
-    <meta
-      name="twitter:image"
-      content="{{ resources.GetMatch "img/meta-image.*" | absURL }}"
-    />
+    {{ with (resources.GetMatch "img/meta-image.*") }}
+      <meta name="twitter:image" content="{{ .Permalink }}" />
+    {{ end }}
   {{ end }}
 
+  {{/* =========================
+     Schema.org Person (i18n alternate names)
+     Collect person_alt_1..person_alt_20 if they exist
+     ========================= */}}
+  {{ $alts := slice }}
+  {{ range $i := seq 1 20 }}
+    {{ $key := printf "person_alt_%d" $i }}
+    {{ $val := i18n $key }}
+    {{ if ne $val $key }}
+      {{ $alts = $alts | append $val }}
+    {{ end }}
+  {{ end }}
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ i18n "person_name" }}",
+    "alternateName": [
+      {{- range $idx, $a := $alts -}}
+        {{- if $idx }},{{ end -}}
+        {{- printf "%q" $a -}}
+      {{- end -}}
+    ],
+    "url": "{{ .Site.Home.Permalink }}"
+  }
+  </script>
+
+  {{/* =========================
+     Misc
+     ========================= */}}
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="theme-color" content="#1A94D2" />
 
-  {{/* This adds bootstrap CSS */}}
+  {{/* Bootstrap / main CSS */}}
   {{ $options := (dict "targetPath" "css/styles.css" "outputStyle" "compressed") }}
   {{ $style := resources.Get "/scss/main.scss" | toCSS $options | minify }}
-  
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" media="screen" />
 
   {{/* Favicon */}}
   {{ with resources.GetMatch "img/favicon.*" }}
-  <link
-    rel="shortcut icon"
-    type="image/x-icon"
-    href="{{.RelPermalink}}"
-  />
-  {{end}}
-  
-   <!-- Google tag (gtag.js) -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ .RelPermalink }}" />
+  {{ end }}
+
+  {{/* Google tag (gtag.js) */}}
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRBSFES31S"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
