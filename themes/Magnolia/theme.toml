@@ -21,7 +21,7 @@ features = ["Responsive", "Modular", "Customizable", "SEO ready", "Google Analyt
 # If the theme has a single author
 [author]
     name = "Pomware Innovative Solutions LTD"
-    homepage = "https://github.com/PomWare"
+    homepage = "https://pomwareltd.com/"
 
 # If porting an existing theme
 # [original]

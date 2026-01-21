@@ -130,41 +130,35 @@
 </main>
 
   {{/* =========================
-     Structured data: Book + Author
-     Put this once per book list page
-     ========================= */}}
+    Structured data: Book + Author
+    ========================= */}}
 
   {{ $authorUrl := .Site.Home.Permalink }}
-  {{ $authorName := i18n "person_name" | default (i18n "home_author_name") | default "Αικατερίνη Πομπόρτση" }}
+  {{ $authorName := (i18n "person_name" | default (i18n "home_author_name") | default "Αικατερίνη Πομπόρτση") }}
+  {{ $pageUrl := .Permalink }}
 
   {{ range $i, $b := $booksByLang.books }}
-    {{/* Create a stable URL for each book item:
-        If you have a real page per book, replace this with that URL.
-        Otherwise we link to the books page with a hash.
-    */}}
-    {{ $bookUrl := printf "%s#book-%d" .Permalink $i }}
+    {{ $bookUrl := printf "%s#book-%d" $pageUrl $i }}
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Book",
-  "name": {{ $b.title | jsonify }},
-  "url": {{ $bookUrl | jsonify }},
-  "author": {
-    "@type": "Person",
-    "name": {{ $authorName | jsonify }},
-    "url": {{ $authorUrl | jsonify }}
-  },
-  {{ with $b.year }}"datePublished": {{ printf "%v" . | jsonify }},{{ end }}
-  "inLanguage": {{ $.Lang | jsonify }},
-  {{ if isset $b "pages" }}"numberOfPages": {{ $b.pages }},{{ end }}
-  {{ if isset $b "price" }}"offers": { "@type": "Offer", "price": {{ $b.price | jsonify }}, "priceCurrency": "EUR" },{{ end }}
-  {{ with $b.link }}"sameAs": {{ . | jsonify }},{{ end }}
-  {{ with $b.cover }}"image": {{ (printf "%s%s" $.Site.BaseURL (strings.TrimPrefix "/" (. | relURL))) | jsonify }},{{ end }}
-  "isAccessibleForFree": {{ if eq $b.price "Δωρεάν" }}true{{ else }}false{{ end }}
-}
-</script>
-
-  {{ end }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": {{ $b.title | jsonify }},
+    "url": {{ $bookUrl | jsonify }},
+    "author": {
+      "@type": "Person",
+      "name": {{ $authorName | jsonify }},
+      "url": {{ $authorUrl | jsonify }}
+    },
+    {{ with $b.year }}"datePublished": {{ printf "%v" . | jsonify }},{{ end }}
+    "inLanguage": {{ $.Lang | jsonify }},
+    {{ if isset $b "pages" }}"numberOfPages": {{ $b.pages }},{{ end }}
+    {{ with $b.link }}"sameAs": {{ . | jsonify }},{{ end }}
+    {{ with $b.cover }}"image": {{ (. | absURL) | jsonify }},{{ end }}
+    "isAccessibleForFree": {{ if eq $b.price "Δωρεάν" }}true{{ else }}false{{ end }}
+  }
+  </script>
 
 {{ end }}
+

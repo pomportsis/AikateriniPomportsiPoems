@@ -2,7 +2,7 @@ disabled = false
 languageCode = 'ru-RU'
 languageName = 'Русский'
 title = 'Катерина Поборци'
-copyright = """Создано с использованием [Hugo](https://gohugo.io/) компанией [Pomware Innovative Solutions LTD](https://github.com/PomWare)\n
+copyright = """Создано с использованием [Hugo](https://gohugo.io/) компанией [Pomware Innovative Solutions LTD](https://pomwareltd.com/)\n
 Лицензия [MIT](https://github.com/ololiuhqui/magnolia-free-hugo-theme/blob/main/LICENSE.md)\n
 © Все права защищены компанией POMWARE INNOVATIVE SOLUTIONS LTD"""
 contentDir="content/ru"
