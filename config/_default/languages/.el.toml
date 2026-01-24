@@ -35,13 +35,6 @@ ___
     blogTitle = "Ενδιαφέρουσες ιστορίες"
     blogButton = "Περισσότερες ιστορίες"
 
-[params.office]
-  title = "Γραφεία"
-  description = "Αυτή η σελίδα μπορεί να παραμετροποιηθεί εύκολα προσθέτοντας έναν σύνδεσμο Google Maps για οδηγίες προς την τοποθεσία της επιχείρησης."
-  buttonText = "Οδηγίες"
-  buttonLink = "https://maps.app.goo.gl/LzsPzRkTYSZ8SF3y8"
-  mapLink = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d382266.44569392945!2d-76.55832397784323!3d41.53770983690751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c4d93a77484bbb%3A0xfff27920ab9bfae8!2sScranton%2C%20Pennsylvania%2C%20United%20States!5e0!3m2!1sel!2sel!4v1716459350324!5m2!1sel!2sel" # Google Maps embed link
-
 [params.contacts]
   title = "Επικοινωνήστε μαζί μας!"
   formCallToAction = "Αυτή είναι μια ενδεικτική σελίδα επικοινωνίας· μπορείτε να λαμβάνετε απαντήσεις από φόρμες μέσω Formspree (δωρεάν)."
@@ -87,14 +80,14 @@ ___
   enabled = true
   callToAction = "Συνδεθείτε μαζί μας στα social media >"
       [[params.socials.link]]
-        name = "github"
-        link = "https://github.com/PomWare"
+        name = "globe"
+        link = "https://pomwareltd.com/"
       [[params.socials.link]]
         name = "linkedin"
-        link = ""
+        link = "https://www.linkedin.com/company/pomware/"
       [[params.socials.link]]
-        name = "whatsapp"
-        link = ""
+        name = "telephone"
+        link = "tel:++35796365503"
 
 [params.schedules]
   enabledFooter = false

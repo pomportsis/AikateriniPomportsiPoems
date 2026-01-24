@@ -86,14 +86,14 @@ Guardate cosa è in grado di fare questo tema nella pagina delle caratteristiche
   enabled = true
   callToAction = "Мы в социальных сетях >"
       [[params.socials.link]]
-        name = "github"
-        link = "https://github.com/PomWare"
+        name = "globe"
+        link = "https://pomwareltd.com/"
       [[params.socials.link]]
         name = "linkedin"
-        link = ""
+        link = "https://www.linkedin.com/company/pomware/"
       [[params.socials.link]]
-        name = "whatsapp"
-        link = ""
+        name = "telephone"
+        link = "tel:++35796365503"
 
 [params.schedules]
   enabledFooter = false

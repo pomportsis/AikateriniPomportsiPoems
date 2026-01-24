@@ -91,14 +91,14 @@ Look at what this theme is capable to do on the features page, and see a beautif
   enabled = true # enables/disables the whole social section in the footer
   callToAction= "Get connected with us on social networks >"
       [[params.socials.link]]
-        name = "github"
-        link = "https://github.com/PomWare"
+        name = "globe"
+        link = "https://pomwareltd.com/"
       [[params.socials.link]]
         name = "linkedin"
-        link = ""
+        link = "https://www.linkedin.com/company/pomware/"
       [[params.socials.link]]
-        name = "whatsapp"
-        link = ""
+        name = "telephone"
+        link = "tel:++35796365503"
       # You can add other socials here by copypasting the above section and
       # selecting the right name for the icon from here https://icons.getbootstrap.com/
 
