@@ -2,7 +2,7 @@ disabled = false
 languageCode = 'el-EL'
 languageName = 'Ελληνικα'
 title = 'Αικατερίνη Πομπόρτση'
-copyright = """Σχεδιασμένο με [Hugo](https://gohugo.io/) από την [Pomware Innovative Solutions LTD](https://pomwareltd.com/)\n
+copyright = """Developed by [Pomware Innovative Solutions LTD](https://pomwareltd.com/)\n
 Με άδεια χρήσης [MIT](https://github.com/ololiuhqui/magnolia-free-hugo-theme/blob/main/LICENSE.md)\n
 © Όλα τα δικαιώματα διατηρούνται από την POMWARE INNOVATIVE SOLUTIONS LTD"""
 contentDir = "content/el"
