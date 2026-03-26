@@ -880,16 +880,16 @@ a.btn.btn-outline-secondary.mb-4:hover {
 @media (max-width: 768px) {
   .poem-shell {
     max-width: 100%;
-    padding: 0 12px;
+    padding: 0 6px;
   }
 
   .poem-page {
     max-width: 100%;
-    padding: 2.5rem 1.5rem 2.25rem; /* reduce 4rem */
+    padding: 2.25rem 1rem 2rem;
   }
 
   .poem-page::after {
-    left: 1.5rem; /* keep the notebook margin aligned */
+    left: 1rem; /* keep the notebook margin aligned */
   }
 
   .poem-page h1 {
@@ -905,12 +905,12 @@ a.btn.btn-outline-secondary.mb-4:hover {
 /* Phone */
 @media (max-width: 480px) {
   .poem-page {
-    padding: 2rem 1.1rem 1.75rem;
+    padding: 1.8rem 0.8rem 1.6rem;
     border-radius: 14px;
   }
 
   .poem-page::after {
-    left: 1.15rem;
+    left: 0.8rem;
     width: 1px;
   }
 
