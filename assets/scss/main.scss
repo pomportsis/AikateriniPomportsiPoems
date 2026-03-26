@@ -281,6 +281,95 @@ footer {
   max-width: 900px;
 }
 
+.poem-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.poem-actions .poem-nav {
+  display: flex;
+  align-items: center;
+}
+
+.poem-actions .poem-nav .btn,
+.poem-actions .poem-share-trigger {
+  width: 210px;
+  max-width: 100%;
+  height: 46px;
+  min-height: 46px;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.1;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.poem-share-dropdown {
+  position: relative;
+}
+
+.poem-share-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.poem-actions .btn.btn-outline-secondary {
+  font-weight: 700 !important;
+  padding: 10px 14px !important;
+  color: rgba(0, 0, 0, 0.78) !important;
+  background: rgba(255, 255, 255, 0.55) !important;
+  border: 2px solid rgba(0, 0, 0, 0.28) !important;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.10) !important;
+  text-shadow: none !important;
+}
+
+.poem-actions .btn.btn-outline-secondary:hover {
+  color: rgba(0, 0, 0, 0.90) !important;
+  background: rgba(255, 255, 255, 0.75) !important;
+  border-color: rgba(0, 0, 0, 0.38) !important;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.14) !important;
+}
+
+.poem-share-menu {
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+  padding: 6px;
+  min-width: 220px;
+}
+
+.poem-share-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 9px;
+  font-family: JosefinSans;
+  font-weight: 600;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.poem-share-item i {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.poem-share-item:hover,
+.poem-share-item:focus {
+  background: rgba(115, 0, 60, 0.08);
+}
+
+.poem-share__status {
+  flex-basis: 100%;
+  min-height: 1rem;
+  margin: 2px 2px 0;
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
 /* the “paper page” */
 .poem-page {
   position: relative;
@@ -878,6 +967,32 @@ a.btn.btn-outline-secondary.mb-4:hover {
 
 /* Tablet */
 @media (max-width: 768px) {
+  .poem-actions {
+    flex-direction: column;
+  }
+
+  .poem-actions .poem-nav {
+    width: 100%;
+  }
+
+  .poem-actions .poem-nav .btn {
+    width: 100%;
+  }
+
+  .poem-share-dropdown {
+    width: 100%;
+  }
+
+  .poem-share-trigger {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .poem-share-menu {
+    width: 100%;
+    min-width: 0;
+  }
+
   .poem-shell {
     max-width: 100%;
     padding: 0 6px;
@@ -994,4 +1109,23 @@ a.btn.btn-outline-secondary.mb-4:hover {
   .books-section-break__line{
     width: 100%;
   }
+}
+
+/* Keep Back + Share buttons identical in poem actions */
+.poem-actions .btn.btn-outline-secondary,
+.poem-actions a.btn.btn-outline-secondary {
+  --bs-btn-color: rgba(0, 0, 0, 0.78) !important;
+  --bs-btn-bg: rgba(255, 255, 255, 0.55) !important;
+  --bs-btn-border-color: rgba(0, 0, 0, 0.28) !important;
+  --bs-btn-hover-color: rgba(0, 0, 0, 0.90) !important;
+  --bs-btn-hover-bg: rgba(255, 255, 255, 0.75) !important;
+  --bs-btn-hover-border-color: rgba(0, 0, 0, 0.38) !important;
+  --bs-btn-active-color: rgba(0, 0, 0, 0.90) !important;
+  --bs-btn-active-bg: rgba(255, 255, 255, 0.75) !important;
+  --bs-btn-active-border-color: rgba(0, 0, 0, 0.38) !important;
+
+  font-weight: 700 !important;
+  padding: 10px 14px !important;
+  border: 2px solid rgba(0, 0, 0, 0.28) !important;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.10) !important;
 }

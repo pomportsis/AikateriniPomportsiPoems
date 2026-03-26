@@ -3,10 +3,84 @@
 
   <div class="poem-shell mx-auto">
 
-    <div class="poem-nav">
-      <a class="btn btn-outline-secondary mb-4" href="{{ .CurrentSection.RelPermalink }}">
-        ← {{ i18n "back_to_poems" | default "Back to poems" }}
-      </a>
+    {{ $shareButtonLabel := i18n "share_poem_button" | default "Share" }}
+    {{ $copyLabel := i18n "share_copy_link" | default "Copy link" }}
+    {{ $copySuccess := i18n "share_copy_success" | default "Link copied!" }}
+    {{ $copyFail := i18n "share_copy_fail" | default "Could not copy automatically. Please copy manually." }}
+    {{ $instagramHint := i18n "share_instagram_hint" | default "Link copied. Paste it in Instagram." }}
+    {{ $shareUrl := .Permalink }}
+    {{ $shareUrlEncoded := $shareUrl | urlquery }}
+
+    <div class="poem-actions mb-4">
+      <div class="poem-nav">
+        <a class="btn btn-outline-secondary" href="{{ .CurrentSection.RelPermalink }}">
+          ← {{ i18n "back_to_poems" | default "Back to poems" }}
+        </a>
+      </div>
+
+      <div class="dropdown poem-share-dropdown">
+        <button
+          class="btn btn-outline-secondary dropdown-toggle poem-share-trigger"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="bi bi-share" aria-hidden="true"></i>
+          <span>{{ $shareButtonLabel }}</span>
+        </button>
+
+        <ul class="dropdown-menu dropdown-menu-end poem-share-menu">
+          <li>
+            <button
+              type="button"
+              class="dropdown-item poem-share-item poem-share-item--copy"
+              data-copy-url="{{ $shareUrl }}"
+              data-copy-success="{{ $copySuccess }}"
+              data-copy-fail="{{ $copyFail }}"
+            >
+              <i class="bi bi-link-45deg" aria-hidden="true"></i>
+              <span>{{ $copyLabel }}</span>
+            </button>
+          </li>
+          <li>
+            <a
+              class="dropdown-item poem-share-item"
+              href="https://www.facebook.com/sharer/sharer.php?u={{ $shareUrlEncoded }}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bi bi-facebook" aria-hidden="true"></i>
+              <span>Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item poem-share-item"
+              href="https://www.facebook.com/dialog/send?app_id=145634995501895&link={{ $shareUrlEncoded }}&redirect_uri={{ $shareUrlEncoded }}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bi bi-messenger" aria-hidden="true"></i>
+              <span>Messenger</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item poem-share-item poem-share-instagram"
+              href="https://www.instagram.com/"
+              data-copy-url="{{ $shareUrl }}"
+              data-copy-success="{{ $instagramHint }}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bi bi-instagram" aria-hidden="true"></i>
+              <span>Instagram</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <p class="poem-share__status" aria-live="polite"></p>
     </div>
 
     {{/* Defaults from current page (Greek pages will use these) */}}
@@ -56,5 +130,69 @@
     </article>
 
   </div>
+
+  <script>
+    (function () {
+      const actionsRoot = document.querySelector('.poem-actions');
+      if (!actionsRoot) return;
+
+      const statusEl = actionsRoot.querySelector('.poem-share__status');
+      const copyButton = actionsRoot.querySelector('[data-copy-url].poem-share-item--copy');
+      const instagramLink = actionsRoot.querySelector('.poem-share-instagram');
+
+      const announce = (message) => {
+        if (!statusEl) return;
+        statusEl.textContent = message || '';
+      };
+
+      const copyText = async (text) => {
+        if (!text) return false;
+
+        if (navigator.clipboard && window.isSecureContext) {
+          try {
+            await navigator.clipboard.writeText(text);
+            return true;
+          } catch (e) {
+            // continue to fallback
+          }
+        }
+
+        try {
+          const helper = document.createElement('textarea');
+          helper.value = text;
+          helper.setAttribute('readonly', '');
+          helper.style.position = 'absolute';
+          helper.style.left = '-9999px';
+          document.body.appendChild(helper);
+          helper.select();
+          const ok = document.execCommand('copy');
+          document.body.removeChild(helper);
+          return ok;
+        } catch (e) {
+          return false;
+        }
+      };
+
+      if (copyButton) {
+        copyButton.addEventListener('click', async () => {
+          const url = copyButton.getAttribute('data-copy-url') || window.location.href;
+          const successMsg = copyButton.getAttribute('data-copy-success') || 'Link copied!';
+          const failMsg = copyButton.getAttribute('data-copy-fail') || 'Could not copy automatically.';
+
+          const ok = await copyText(url);
+          announce(ok ? successMsg : failMsg);
+        });
+      }
+
+      if (instagramLink) {
+        instagramLink.addEventListener('click', async () => {
+          const url = instagramLink.getAttribute('data-copy-url') || window.location.href;
+          const msg = instagramLink.getAttribute('data-copy-success') || 'Link copied.';
+          const ok = await copyText(url);
+          if (ok) announce(msg);
+        });
+      }
+    })();
+  </script>
 </main>
 {{ end }}
